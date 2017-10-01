@@ -31,7 +31,7 @@ Shader "Room/ThreeDScans"
         CGPROGRAM
 
         #pragma surface Surface Standard vertex:Vertex addshadow fullforwardshadows
-        #pragma target 3.5
+        #pragma target 3.0
 
         struct Input
         {
