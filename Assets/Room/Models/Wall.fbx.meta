@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 21afac0722d311d40b72600e9b421a4b
-timeCreated: 1506857178
+guid: 37a8f7572e647334f8d72cc60eba1a72
+timeCreated: 1506872875
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Wall
-    400000: default
-    400002: //RootNode
-    400004: Wall
-    2300000: default
-    2300002: Wall
-    3300000: default
-    3300002: Wall
-    4300000: default
-    4300002: Wall
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: wall2
   materials:
     importMaterials: 0
     materialName: 0
@@ -41,16 +34,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -61,7 +54,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
