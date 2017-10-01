@@ -39,12 +39,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DetailMapScale: 2.2
-    - _DetailNormalMapScale: 0.4
+    - _DetailMapScale: 1.2
+    - _DetailNormalMapScale: 1
     - _Metallic1: 0.378
-    - _Metallic2: 0.345
+    - _Metallic2: 0.272
     - _Smoothness1: 0
-    - _Smoothness2: 0.597
+    - _Smoothness2: 0.445
     m_Colors:
-    - _Color1: {r: 0.8455882, g: 0.7958477, b: 0.721237, a: 1}
-    - _Color2: {r: 0.8235294, g: 0.8235294, b: 0.8235294, a: 1}
+    - _Color1: {r: 0.8088235, g: 0.78027683, b: 0.73745674, a: 1}
+    - _Color2: {r: 0.9191176, g: 0.9191176, b: 0.9191176, a: 1}
