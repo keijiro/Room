@@ -1,4 +1,4 @@
-Shader "ThreeDScans"
+Shader "Room/ThreeDScans"
 {
     Properties
     {
@@ -104,5 +104,5 @@ Shader "ThreeDScans"
     }
 
     FallBack "Diffuse"
-    CustomEditor "ThreeDScansInspector"
+    CustomEditor "Room.ThreeDScansMaterialInspector"
 }
