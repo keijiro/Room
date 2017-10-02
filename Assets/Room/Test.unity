@@ -350,7 +350,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285074403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0.68, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 720581301}
@@ -526,7 +526,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 37a8f7572e647334f8d72cc60eba1a72, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 67c81bd56a238f14f846243038ea2395, type: 2}
+      objectReference: {fileID: 2100000, guid: 149b07706f0cc1241b90cdaf421a561d, type: 2}
     - target: {fileID: 2300000, guid: 37a8f7572e647334f8d72cc60eba1a72, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 896090104}
   - component: {fileID: 896090103}
   m_Layer: 0
-  m_Name: Point light (1)
+  m_Name: Bounce Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,6 +744,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001635744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1001635746}
+  - component: {fileID: 1001635745}
+  m_Layer: 0
+  m_Name: Bounce Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1001635745
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1001635744}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.7545639, g: 1, b: 0.6764706, a: 1}
+  m_Intensity: 0.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1001635746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1001635744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298310885
 GameObject:
@@ -827,7 +892,7 @@ GameObject:
   - component: {fileID: 1363668302}
   - component: {fileID: 1363668301}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Light Shaft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,13 +943,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363668300}
-  m_LocalRotation: {x: 0.03296403, y: -0.0073139854, z: 0.2164865, w: 0.9757015}
-  m_LocalPosition: {x: -0.12, y: 0.81, z: 0}
+  m_LocalRotation: {x: 0.01953482, y: -0.00067363755, z: 0.03445687, w: 0.99921507}
+  m_LocalPosition: {x: 0, y: 0.81, z: 0}
   m_LocalScale: {x: 0.02, y: 3.32, z: 0.02}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 3.87, y: 0, z: 25.02}
+  m_LocalEulerAnglesHint: {x: 2.24, y: 0, z: 3.95}
 --- !u!1 &1447242012
 GameObject:
   m_ObjectHideFlags: 0
