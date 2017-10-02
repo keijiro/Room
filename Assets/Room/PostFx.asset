@@ -55,8 +55,8 @@ MonoBehaviour:
     overrideState: 0
     value: -12
   thicknessModifier:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.4
   radius:
     overrideState: 0
     value: 0.25
