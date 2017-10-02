@@ -2,27 +2,28 @@ Shader "Room/ThreeDScans"
 {
     Properties
     {
-        _NormalMap("Normal Map", 2D) = "bump" {}
-        _OcclusionMap("Occlusion Map", 2D) = "white" {}
-        _CurvatureMap("Curvature Map", 2D) = "white" {}
+        _NormalMap("", 2D) = "bump" {}
+        _OcclusionMap("", 2D) = "white" {}
+        _OcclusionMapStrength("", Range(0, 1)) = 1
+        _CurvatureMap("", 2D) = "white" {}
 
         [Header(Channel 1)]
 
-        _Color1("Color", Color) = (1, 1, 1, 1)
-        _Smoothness1("Smoothness", Range(0, 1)) = 0
-        [Gamma] _Metallic1("Metallic", Range(0, 1)) = 0
+        _Color1("", Color) = (1, 1, 1, 1)
+        _Smoothness1("", Range(0, 1)) = 0
+        [Gamma] _Metallic1("", Range(0, 1)) = 0
 
         [Header(Channel 2)]
 
-        _Color2("Color", Color) = (1, 1, 1, 1)
-        _Smoothness2("Smoothness", Range(0, 1)) = 0
-        [Gamma] _Metallic2("Metallic", Range(0, 1)) = 0
+        _Color2("", Color) = (1, 1, 1, 1)
+        _Smoothness2("", Range(0, 1)) = 0
+        [Gamma] _Metallic2("", Range(0, 1)) = 0
 
         [Header(Detail Maps)]
-        _DetailAlbedoMap("Albedo", 2D) = "gray" {}
-        _DetailNormalMap("Normal Map", 2D) = "bump" {}
-        _DetailNormalMapScale("Scale", Range(0, 2)) = 1
-        _DetailMapScale("Mapping Scale", Float) = 1
+        _DetailAlbedoMap("", 2D) = "gray" {}
+        _DetailNormalMap("", 2D) = "bump" {}
+        _DetailNormalMapScale("", Range(0, 2)) = 1
+        _DetailMapScale("", Float) = 1
     }
     SubShader
     {
@@ -42,6 +43,7 @@ Shader "Room/ThreeDScans"
 
         sampler2D _NormalMap;
         sampler2D _OcclusionMap;
+        half _OcclusionMapStrength;
         sampler2D _CurvatureMap;
 
         half3 _Color1;
@@ -93,7 +95,8 @@ Shader "Room/ThreeDScans"
             o.Normal = BlendNormals(nb, nm);
 
             // Occlusion map
-            o.Occlusion = tex2D(_OcclusionMap, IN.baseCoord).g;
+            half occ = tex2D(_OcclusionMap, IN.baseCoord).g;
+            o.Occlusion = LerpOneTo(occ, _OcclusionMapStrength);
 
             // Etc.
             o.Metallic = lerp(_Metallic1, _Metallic2, cv);

@@ -25,7 +25,9 @@ namespace Room
             );
 
             editor.TexturePropertySingleLine(
-                Labels.occlusionMap, FindProperty("_OcclusionMap", props)
+                Labels.occlusionMap,
+                FindProperty("_OcclusionMap", props),
+                FindProperty("_OcclusionMapStrength", props)
             );
 
             editor.TexturePropertySingleLine(
