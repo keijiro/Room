@@ -52,6 +52,14 @@ namespace Room
 
             EditorGUILayout.Space();
 
+            // Backface
+            EditorGUILayout.LabelField("Back face", EditorStyles.boldLabel);
+            editor.ColorProperty(FindProperty("_Color3", props), "Color");
+            editor.RangeProperty(FindProperty("_Metallic3", props), "Metallic");
+            editor.RangeProperty(FindProperty("_Smoothness3", props), "Smoothness");
+
+            EditorGUILayout.Space();
+
             // Detail maps
             EditorGUILayout.LabelField("Detail Maps", EditorStyles.boldLabel);
 
