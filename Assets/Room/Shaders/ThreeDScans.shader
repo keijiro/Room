@@ -2,36 +2,36 @@ Shader "Room/ThreeDScans"
 {
     Properties
     {
+        // Render mode options
+        [KeywordEnum(Default, Helix)] 
+        _Mode("", Float) = 0
+
+        // Base maps
         _NormalMap("", 2D) = "bump" {}
         _OcclusionMap("", 2D) = "white" {}
         _OcclusionMapStrength("", Range(0, 1)) = 1
         _CurvatureMap("", 2D) = "white" {}
 
-        [Header(Channel 1)]
-
+        // Channel 1
         _Color1("", Color) = (1, 1, 1, 1)
         _Smoothness1("", Range(0, 1)) = 0
         [Gamma] _Metallic1("", Range(0, 1)) = 0
 
-        [Header(Channel 2)]
-
+        // Channel 2
         _Color2("", Color) = (1, 1, 1, 1)
         _Smoothness2("", Range(0, 1)) = 0
         [Gamma] _Metallic2("", Range(0, 1)) = 0
 
-        [Header(Backface)]
-
+        // Channel 3 (backface)
         _Color3("", Color) = (1, 0, 0, 0)
         _Smoothness3("", Range(0, 1)) = 0
         [Gamma] _Metallic3("", Range(0, 1)) = 0
 
-        [Header(Detail Maps)]
+        // Detail maps
         _DetailAlbedoMap("", 2D) = "gray" {}
         _DetailNormalMap("", 2D) = "bump" {}
         _DetailNormalMapScale("", Range(0, 2)) = 1
         _DetailMapScale("", Float) = 1
-
-        [HideInInspector] _Mode("", Float) = 0
     }
     SubShader
     {
@@ -41,7 +41,8 @@ Shader "Room/ThreeDScans"
 
         CGPROGRAM
 
-        #pragma surface Surface Standard vertex:Vertex addshadow nolightmap nolppv
+        #pragma surface Surface Standard vertex:Vertex addshadow nolightmap exclude_path:forward
+        #pragma multi_compile _MODE_DEFAULT _MODE_HELIX
         #pragma target 3.0
 
         struct Input
@@ -84,8 +85,10 @@ Shader "Room/ThreeDScans"
 
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
+#if defined(_MODE_HELIX)
             float phi = atan2(IN.localCoord.z, IN.localCoord.x);
             clip(frac(IN.localCoord.y * 8 + phi / UNITY_PI) - 0.5);
+#endif
 
             // Surface flip
             float flip = IN.vface < 0 ? 1 : 0;

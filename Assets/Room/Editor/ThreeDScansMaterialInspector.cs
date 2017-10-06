@@ -15,7 +15,10 @@ namespace Room
 
         public override void OnGUI(MaterialEditor editor, MaterialProperty[] props)
         {
-            EditorGUI.BeginChangeCheck();
+            // Render mode pop-up
+            editor.ShaderProperty(FindProperty("_Mode", props), "Render Mode");
+
+            EditorGUILayout.Space();
 
             // Base maps
             EditorGUILayout.LabelField("Base Maps", EditorStyles.boldLabel);
@@ -38,25 +41,25 @@ namespace Room
 
             // Channel 1
             EditorGUILayout.LabelField("Channel 1", EditorStyles.boldLabel);
-            editor.ColorProperty(FindProperty("_Color1", props), "Color");
-            editor.RangeProperty(FindProperty("_Metallic1", props), "Metallic");
-            editor.RangeProperty(FindProperty("_Smoothness1", props), "Smoothness");
+            editor.ShaderProperty(FindProperty("_Color1", props), "Color");
+            editor.ShaderProperty(FindProperty("_Metallic1", props), "Metallic");
+            editor.ShaderProperty(FindProperty("_Smoothness1", props), "Smoothness");
 
             EditorGUILayout.Space();
 
             // Channel 2
             EditorGUILayout.LabelField("Channel 2", EditorStyles.boldLabel);
-            editor.ColorProperty(FindProperty("_Color2", props), "Color");
-            editor.RangeProperty(FindProperty("_Metallic2", props), "Metallic");
-            editor.RangeProperty(FindProperty("_Smoothness2", props), "Smoothness");
+            editor.ShaderProperty(FindProperty("_Color2", props), "Color");
+            editor.ShaderProperty(FindProperty("_Metallic2", props), "Metallic");
+            editor.ShaderProperty(FindProperty("_Smoothness2", props), "Smoothness");
 
             EditorGUILayout.Space();
 
             // Backface
             EditorGUILayout.LabelField("Back face", EditorStyles.boldLabel);
-            editor.ColorProperty(FindProperty("_Color3", props), "Color");
-            editor.RangeProperty(FindProperty("_Metallic3", props), "Metallic");
-            editor.RangeProperty(FindProperty("_Smoothness3", props), "Smoothness");
+            editor.ShaderProperty(FindProperty("_Color3", props), "Color");
+            editor.ShaderProperty(FindProperty("_Metallic3", props), "Metallic");
+            editor.ShaderProperty(FindProperty("_Smoothness3", props), "Smoothness");
 
             EditorGUILayout.Space();
 
@@ -73,7 +76,7 @@ namespace Room
                 FindProperty("_DetailNormalMapScale", props)
             );
 
-            editor.FloatProperty(FindProperty("_DetailMapScale", props), "Scale");
+            editor.ShaderProperty(FindProperty("_DetailMapScale", props), "Scale");
         }
     }
 }
