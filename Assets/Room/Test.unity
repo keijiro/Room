@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 64ed1dc93e7e3e9409ab1bbd1f81c7ac, type: 2}
-  _dissolve: 0
+  _dissolve: 0.631
   _inflate: 0
   _voxelize: 0
   _jitter: 0
@@ -374,7 +374,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e49845132660aaf4aa2359164a207982, type: 2}
+  - {fileID: 2100000, guid: ed08b8cb962625a4996f5b4550bedd73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 1c2360d9eb54b2a4daaaa2cee012c106, type: 2}
-  _dissolve: 0
+  _dissolve: 0.609
   _inflate: 0
   _voxelize: 0
   _jitter: 0
@@ -1088,7 +1088,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e4a33a9bb5600db4d9afa34f3493bf1e, type: 2}
+  - {fileID: 2100000, guid: 840f8654250c12346a4eddb811806039, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -3,7 +3,7 @@ Shader "Room/ThreeDScans"
     Properties
     {
         // Render mode options
-        [KeywordEnum(Default, Helix)] 
+        [KeywordEnum(Default, Helix, Vacs)] 
         _Mode("", Float) = 0
 
         // Base maps
@@ -36,14 +36,22 @@ Shader "Room/ThreeDScans"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-
-        Cull off
+        Cull Off
 
         CGPROGRAM
 
         #pragma surface Surface Standard vertex:Vertex addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_HELIX
+        #pragma multi_compile _MODE_DEFAULT _MODE_HELIX _MODE_VACS
         #pragma target 3.0
+
+        struct Attributes
+        {
+            float4 vertex : POSITION;
+            float4 tangent : TANGENT;
+            float3 normal : NORMAL;
+            float2 texCoord : TEXCOORD0;
+            uint vertexID : SV_VertexID;
+        };
 
         struct Input
         {
@@ -51,6 +59,9 @@ Shader "Room/ThreeDScans"
             float3 localCoord;
             float3 localNormal;
             float vface : VFACE;
+        #if defined(_MODE_VACS)
+            float flat;
+        #endif
         };
 
         sampler2D _NormalMap;
@@ -75,20 +86,44 @@ Shader "Room/ThreeDScans"
         half _DetailNormalMapScale;
         half _DetailMapScale;
 
-        void Vertex(inout appdata_full v, out Input data)
+    #if defined(_MODE_VACS) && defined(UNITY_COMPILER_HLSL)
+        StructuredBuffer<float4> _OriginalPositionBuffer;
+        StructuredBuffer<float4> _OriginalNormalBuffer;
+        StructuredBuffer<float4> _PositionBuffer;
+        StructuredBuffer<float4> _NormalBuffer;
+        StructuredBuffer<float4> _TangentBuffer;
+        uint _TriangleCount;
+    #endif
+
+        void Vertex(inout Attributes vertex, out Input data)
         {
             UNITY_INITIALIZE_OUTPUT(Input, data);
-            data.texCoord = v.texcoord.xy;
-            data.localCoord = v.vertex.xyz;
-            data.localNormal = v.normal.xyz;
+
+            data.texCoord = vertex.texCoord;
+
+        #if defined(_MODE_VACS) && defined(UNITY_COMPILER_HLSL)
+            const uint vid = vertex.vertexID;
+            const uint offs = vid / 3 + (vid % 3) * _TriangleCount;
+
+            vertex.vertex.xyz = _PositionBuffer[offs].xyz;
+            vertex.normal.xyz = _NormalBuffer[offs].xyz;
+            vertex.tangent = _TangentBuffer[offs];
+
+            data.localCoord = _OriginalPositionBuffer[offs].xyz;
+            data.localNormal = _OriginalNormalBuffer[offs].xyz;
+            data.flat = _NormalBuffer[offs].w;
+        #else
+            data.localCoord = vertex.vertex.xyz;
+            data.localNormal = vertex.normal.xyz;
+        #endif
         }
 
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
-#if defined(_MODE_HELIX)
+        #if defined(_MODE_HELIX)
             float phi = atan2(IN.localCoord.z, IN.localCoord.x);
             clip(frac(IN.localCoord.y * 8 + phi / UNITY_PI) - 0.5);
-#endif
+        #endif
 
             // Surface flip
             float flip = IN.vface < 0 ? 1 : 0;
