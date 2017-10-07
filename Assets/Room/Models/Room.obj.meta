@@ -1,15 +1,57 @@
 fileFormatVersion: 2
-guid: 37a8f7572e647334f8d72cc60eba1a72
-timeCreated: 1506872875
+guid: 7e9137f7cf7df324ab16f148a7cc40ab
+timeCreated: 1507358634
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: wall2
+    100000: Back
+    100002: Box
+    100004: Ceiling
+    100006: Cone
+    100008: Floor
+    100010: Pillars
+    100012: //RootNode
+    100014: Side
+    100016: Box_MeshPart0
+    100018: Box_MeshPart1
+    400000: Back
+    400002: Box
+    400004: Ceiling
+    400006: Cone
+    400008: Floor
+    400010: Pillars
+    400012: //RootNode
+    400014: Side
+    400016: Box_MeshPart0
+    400018: Box_MeshPart1
+    2300000: Back
+    2300002: Box
+    2300004: Ceiling
+    2300006: Cone
+    2300008: Floor
+    2300010: Pillars
+    2300012: Side
+    2300014: Box_MeshPart0
+    2300016: Box_MeshPart1
+    3300000: Back
+    3300002: Box
+    3300004: Ceiling
+    3300006: Cone
+    3300008: Floor
+    3300010: Pillars
+    3300012: Side
+    3300014: Box_MeshPart0
+    3300016: Box_MeshPart1
+    4300000: Back
+    4300002: Box
+    4300004: Ceiling
+    4300006: Cone
+    4300008: Floor
+    4300010: Pillars
+    4300012: Side
+    4300014: Box_MeshPart0
+    4300016: Box_MeshPart1
   materials:
     importMaterials: 0
     materialName: 0
@@ -54,7 +96,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
