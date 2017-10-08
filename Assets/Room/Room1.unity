@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.9058824, g: 0.5137255, b: 0.7294118, a: 1}
-  m_AmbientEquatorColor: {r: 0.9705882, g: 0.5495242, b: 0.7811093, a: 1}
-  m_AmbientGroundColor: {r: 0.9058824, g: 0.5137255, b: 0.7294118, a: 1}
+  m_AmbientSkyColor: {r: 0.9852941, g: 0.6230536, b: 0.8222858, a: 1}
+  m_AmbientEquatorColor: {r: 0.9191176, g: 0.68258, b: 0.81267565, a: 1}
+  m_AmbientGroundColor: {r: 0.9843138, g: 0.62352943, b: 0.8235295, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 204667090}
   - component: {fileID: 204667094}
   - component: {fileID: 204667095}
+  - component: {fileID: 204667096}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -313,6 +314,21 @@ MonoBehaviour:
   _startTime: 0
   _recordLength: 4
   _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
+--- !u!114 &204667096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204667089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bleeding: 0.188
+  _fringing: 0.337
+  _scanline: 0.076
+  _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!1 &285074403
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +716,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1558673034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: -0.53}
+  m_LocalPosition: {x: 0, y: 1.1, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285074405}

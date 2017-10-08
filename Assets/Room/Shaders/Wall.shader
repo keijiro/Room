@@ -57,7 +57,13 @@ Shader "Room/Wall"
             float2 uv1 = IN.uv_NormalMap;
             float2 uv2 = uv1 * _DetailMapScale;
 
+#if defined(_MODE_WAVE)
+            float pt = dot(IN.worldPos, normalize(float3(0.1, 0.9, 0.1)));
+            float pt2 = dot(IN.worldPos, normalize(cross(float3(0.1, 0.9, 0.1), float3(0, 0, 1))));
+            o.Albedo = lerp(_Color1, _Color2, smoothstep(0.24, 0.25, abs(frac(pt * 14 + sin(pt2*3)*2.4) - 0.5)));
+#else
             o.Albedo = _Color1;
+#endif
             o.Metallic = _Metallic;
             o.Smoothness = _Smoothness;
 

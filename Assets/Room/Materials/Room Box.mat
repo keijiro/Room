@@ -70,7 +70,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NormalMapScale: 0.935
-    - _OcclusionMapStrength: 0.6
+    - _OcclusionMapStrength: 0.2
     - _OcclusionStrength: 0.7
     - _Parallax: 0.02
     - _Smoothness: 0.18

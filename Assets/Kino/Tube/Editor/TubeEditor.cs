@@ -1,4 +1,4 @@
-// KinoTube - Composite video/old TV artifacts simulation
+// KinoTube - Old TV/video artifacts simulation
 // https://github.com/keijiro/KinoTube
 
 using UnityEngine;
@@ -11,11 +11,13 @@ namespace Kino
     public class TubeEditor : Editor
     {
         SerializedProperty _bleeding;
+        SerializedProperty _fringing;
         SerializedProperty _scanline;
 
         void OnEnable()
         {
             _bleeding = serializedObject.FindProperty("_bleeding");
+            _fringing = serializedObject.FindProperty("_fringing");
             _scanline = serializedObject.FindProperty("_scanline");
         }
 
@@ -24,6 +26,7 @@ namespace Kino
             serializedObject.Update();
 
             EditorGUILayout.PropertyField(_bleeding);
+            EditorGUILayout.PropertyField(_fringing);
             EditorGUILayout.PropertyField(_scanline);
 
             serializedObject.ApplyModifiedProperties();

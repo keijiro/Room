@@ -1,4 +1,4 @@
-﻿// KinoTube - Composite video/old TV artifacts simulation
+﻿// KinoTube - Old TV/video artifacts simulation
 // https://github.com/keijiro/KinoTube
 
 using UnityEngine;
@@ -10,7 +10,8 @@ namespace Kino
     {
         #region Editable attributes
 
-        [SerializeField, Range(0.01f, 1)] float _bleeding = 0.5f;
+        [SerializeField, Range(0, 1)] float _bleeding = 0.5f;
+        [SerializeField, Range(0, 1)] float _fringing = 0.5f;
         [SerializeField, Range(0, 1)] float _scanline = 0.5f;
 
         #endregion
@@ -47,9 +48,11 @@ namespace Kino
             var bleedStep = 2.5f / source.width; // max interval of taps
             var bleedTaps = Mathf.CeilToInt(bleedWidth / bleedStep);
             var bleedDelta = bleedWidth / bleedTaps;
+            var fringeWidth = 0.0025f * _fringing; // width of fringing
 
             _material.SetInt("_BleedTaps", bleedTaps);
             _material.SetFloat("_BleedDelta", bleedDelta);
+            _material.SetFloat("_FringeDelta", fringeWidth);
             _material.SetFloat("_Scanline", _scanline);
 
             Graphics.Blit(source, dest, _material, 0);
