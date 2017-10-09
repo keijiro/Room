@@ -52,15 +52,25 @@ Shader "Room/Wall"
         half _DetailNormalMapScale;
         half _DetailMapScale;
 
+        half3 _PrimaryAxis;
+        half3 _SecondaryAxis;
+
+        float _LocalTime;
+        float _Threshold;
+        float _Param1;
+        float _Param2;
+
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
             float2 uv1 = IN.uv_NormalMap;
             float2 uv2 = uv1 * _DetailMapScale;
 
 #if defined(_MODE_WAVE)
-            float pt = dot(IN.worldPos, normalize(float3(0.1, 0.9, 0.1)));
-            float pt2 = dot(IN.worldPos, normalize(cross(float3(0.1, 0.9, 0.1), float3(0, 0, 1))));
-            o.Albedo = lerp(_Color1, _Color2, smoothstep(0.24, 0.25, abs(frac(pt * 14 + sin(pt2*3)*2.4) - 0.5)));
+            float wx = dot(IN.worldPos, _PrimaryAxis);
+            float wy = dot(IN.worldPos, _SecondaryAxis);
+            float pt = frac(wx * _Param1 + sin(wy * _Param2 + _LocalTime));
+            pt = smoothstep(0.24, 0.25, abs(pt - _Threshold));
+            o.Albedo = lerp(_Color1, _Color2, pt);
 #else
             o.Albedo = _Color1;
 #endif

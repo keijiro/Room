@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Room Cone
   m_Shader: {fileID: 4800000, guid: 7167b41f8c695084585e5c0620386aee, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _MODE_DEFAULT _NORMALMAP
+  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
