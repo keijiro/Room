@@ -69,7 +69,7 @@ Shader "Room/Wall"
             float wx = dot(IN.worldPos, _PrimaryAxis);
             float wy = dot(IN.worldPos, _SecondaryAxis);
             float pt = frac(wx * _Param1 + sin(wy * _Param2 + _LocalTime));
-            pt = smoothstep(0.24, 0.25, abs(pt - _Threshold));
+            pt = smoothstep(1, 1.02, 2 * abs(pt - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, pt);
 #else
             o.Albedo = _Color1;

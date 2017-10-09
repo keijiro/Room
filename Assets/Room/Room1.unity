@@ -166,8 +166,8 @@ GameObject:
   - component: {fileID: 204667091}
   - component: {fileID: 204667090}
   - component: {fileID: 204667094}
-  - component: {fileID: 204667095}
   - component: {fileID: 204667096}
+  - component: {fileID: 204667095}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -306,13 +306,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _setResolution: 1
-  _width: 640
-  _height: 480
-  _frameRate: 50
+  _width: 1440
+  _height: 1080
+  _frameRate: 60
   _allowSlowDown: 1
-  _codec: 1
+  _codec: 0
   _startTime: 0
-  _recordLength: 4
+  _recordLength: 9.333333
   _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
 --- !u!114 &204667096
 MonoBehaviour:
@@ -475,6 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 435322926}
   - component: {fileID: 435322927}
+  - component: {fileID: 435322928}
   m_Layer: 0
   m_Name: Wall Option
   m_TagString: Untagged
@@ -517,6 +518,23 @@ MonoBehaviour:
   _threshold: 0.5
   _param1: 6
   _param2: 2
+--- !u!95 &435322928
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435322925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &597312884
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +545,7 @@ GameObject:
   - component: {fileID: 597312886}
   - component: {fileID: 597312885}
   m_Layer: 0
-  m_Name: Chain
+  m_Name: Light Chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _motionType: 0
-  _speed: 1
+  _speed: 1.0583333
   _interval: 1
   _multiplier: 1
   _randomSeed: 0
@@ -553,7 +571,7 @@ MonoBehaviour:
   _modMultiplier: 10
   _modAmplitude: 0
   _radius: 0.45
-  _ballCount: 10
+  _ballCount: 14
   _ballScale: 0.06
   _color: {r: 2, g: 2, b: 2, a: 1}
   _lineShader: {fileID: 4800000, guid: dc155c5ea6358474bbec90df3a33e3fa, type: 3}
@@ -891,6 +909,16 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 114926619896996182, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 114570214900258282, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114555637872139080, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114193162444516188, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 435322925}
+  - key: {fileID: 114097653759165974, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 720581300}
+  - key: {fileID: 114896365161919654, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 1558673034}
   m_ExposedReferences:
     m_References:
     - 69eb48a25cba7154e852ddbed2243461: {fileID: 597312884}
@@ -962,7 +990,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1558673034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: -0.4}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285074405}
