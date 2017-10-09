@@ -18,3 +18,5 @@ Desktop.ini
 
 /Assets/StreamingAssets/FFmpegOut
 /Assets/StreamingAssets/FFmpegOut.meta
+
+/Assets/Room/Audio/*.wav

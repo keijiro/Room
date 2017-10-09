@@ -730,22 +730,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 1.1, z: -1.4}
   _emitterSize: {x: 2.7, y: 2, z: 4}
-  _throttle: 0.3
-  _life: 3
+  _throttle: 0.4
+  _life: 2
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}
   _directionSpread: 0
   _speedRandomness: 0.5
   _acceleration: {x: 0, y: -0.2, z: 0}
   _drag: 0.1
-  _spin: 600
-  _speedToSpin: 300
+  _spin: 800
+  _speedToSpin: 800
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.06
+  _noiseAmplitude: 0.08
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: e6fbfc0f19f34de49a3742b3d986cbb0, type: 2}
-  _scale: 0.3
+  _scale: 0.4
   _scaleRandomness: 0.6
   _randomSeed: 0
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: e6fbfc0f19f34de49a3742b3d986cbb0, type: 2}
-  _scale: 0.3
+  _scale: 0.4
   _scaleRandomness: 0.6
   _randomSeed: 2
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}

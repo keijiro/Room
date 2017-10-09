@@ -102,7 +102,8 @@ namespace LightBallChain
         static float SmoothStep01(float x)
         {
             x = Mathf.Clamp01(x);
-            return x * x * (3 - 2 * x);
+            //return x * x * (3 - 2 * x);
+            return x * x * x * (x * (x * 6 - 15) + 10);
         }
 
         #endregion
