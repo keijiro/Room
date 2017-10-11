@@ -349,6 +349,9 @@ namespace LightBallChain
 
         void OnRenderObject()
         {
+            // FIXME: Actually should I do this???
+            if (Camera.current.name == "Preview Scene Camera") return;
+
             if (_lineMaterial != null)
             {
                 // Draw lines with procedural draw.
