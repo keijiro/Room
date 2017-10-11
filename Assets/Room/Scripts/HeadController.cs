@@ -14,6 +14,7 @@ namespace Room
         [SerializeField] float _noiseSpeed;
         [SerializeField] float _gradientSpeed;
         [SerializeField] float _accent;
+        [SerializeField] float _accentToScale;
         [SerializeField] int _randomSeed;
 
         #endregion
@@ -48,7 +49,7 @@ namespace Room
             var trs = Matrix4x4.TRS(
                 Vector3.Scale(pos, _positionNoise),
                 Quaternion.Euler(Vector3.Scale(rot, _rotationNoise)),
-                Vector3.one
+                Vector3.one * (1 + _accentToScale * _accent)
             );
 
             var offs = _gradientSpeed * _time + _randomSeed;
