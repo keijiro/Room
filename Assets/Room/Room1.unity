@@ -679,93 +679,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!1 &720581300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 720581301}
-  - component: {fileID: 720581303}
-  - component: {fileID: 720581302}
-  - component: {fileID: 720581304}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &720581301
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 720581300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
-  m_Father: {fileID: 1558673036}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &720581302
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 720581300}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: ec7da04592a355a49b2c6a8e1b6dcf19, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &720581303
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 720581300}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &720581304
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 720581300}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &758468520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1138,7 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 285074403}
   - key: {fileID: 0}
-    value: {fileID: 720581300}
+    value: {fileID: 0}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 0}
@@ -1240,8 +1153,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 114193162444516188, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
     value: {fileID: 435322925}
-  - key: {fileID: 114097653759165974, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
-    value: {fileID: 720581300}
+  - key: {fileID: 0}
+    value: {fileID: 0}
   - key: {fileID: 114896365161919654, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
     value: {fileID: 1558673034}
   - key: {fileID: 114679260582952122, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
@@ -1256,12 +1169,15 @@ PlayableDirector:
     value: {fileID: 1494268562}
   - key: {fileID: 114038672271708076, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
     value: {fileID: 1777813278}
+  - key: {fileID: 114082964684879248, guid: db3141d14de1dd84c808f19c61b6139c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 69eb48a25cba7154e852ddbed2243461: {fileID: 597312884}
     - 9e66cdef8764d8e4c90e027a7f8716cd: {fileID: 2043468743}
     - 057e8b8c7374f8a4ca0c086365029d8e: {fileID: 435322925}
     - c7e1c86f096980a44b4f21768cbe11c2: {fileID: 1588169389}
+    - a2f70266f881f724393898e2970061a4: {fileID: 1669322857}
     - 3f190ff195939dd458e841038e8b8fe2: {fileID: 1702438197}
     - 6d77b5ff0c0ad054a83b3eac8a600023: {fileID: 1121047518}
 --- !u!4 &1230180480
@@ -1408,7 +1324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285074405}
-  - {fileID: 720581301}
+  - {fileID: 1669322858}
   m_Father: {fileID: 1287335875}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1543,6 +1459,55 @@ MonoBehaviour:
   _threshold: 0.5
   _param1: 0
   _param2: 0
+--- !u!1 &1669322857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1669322858}
+  - component: {fileID: 1669322859}
+  m_Layer: 0
+  m_Name: Light Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1669322858
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669322857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558673036}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669322859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669322857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a60ed5f1adecae4b933b643be349468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 2, g: 2, b: 2, a: 1}
+  _radius: 0.1
+  _noiseAmplitude: 0.3
+  _noiseFrequency: 0.9
+  _noiseSpeed: 9
+  _flickering: 0.22
+  _flickerSpeed: 60
+  _mesh: {fileID: 4300000, guid: ca5b264b71a223d43ad300fe9b71184f, type: 3}
+  _shader: {fileID: 4800000, guid: 9cbaa3abc848c6e48ba4780354ddc382, type: 3}
 --- !u!1 &1702438197 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
