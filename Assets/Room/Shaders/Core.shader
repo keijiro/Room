@@ -1,4 +1,4 @@
-Shader "Hidden/Room/LightSphere"
+Shader "Hidden/Room/Core"
 {
     Properties
     {

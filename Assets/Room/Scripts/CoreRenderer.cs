@@ -4,7 +4,7 @@ using UnityEngine.Timeline;
 namespace Room
 {
     [ExecuteInEditMode]
-    class LightSphere : MonoBehaviour, ITimeControl
+    class CoreRenderer : MonoBehaviour, ITimeControl
     {
         #region Editable attributes
 
