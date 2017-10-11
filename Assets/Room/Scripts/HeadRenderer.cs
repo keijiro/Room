@@ -10,7 +10,6 @@ namespace Room
         #region Editable attributes
 
         [Space]
-        [SerializeField] Texture _faceTexture;
         [SerializeField] float _scale = 1;
         [Space]
         [SerializeField] Vector3 _positionNoise;
@@ -22,6 +21,9 @@ namespace Room
         [Space]
         [SerializeField] float _accent;
         [SerializeField] float _accentToScale;
+        [Space]
+        [SerializeField] Texture[] _faceTextures = new Texture[1];
+        [SerializeField] float _faceSelect;
         [Space]
         [SerializeField] int _randomSeed;
 
@@ -96,7 +98,8 @@ namespace Room
             var offs = _gradientSpeed * _time + _randomSeed;
 
             // Update the material properties.
-            _faceMaterial.SetTexture("_MainTex", _faceTexture);
+            var face = Mathf.FloorToInt(_faceSelect * _faceTextures.Length);
+            _faceMaterial.SetTexture("_MainTex", _faceTextures[face]);
 
             _faceMaterial.SetColor("_Color", new Color(1, 1, 1, 1));
             _headMaterial.SetColor("_Color", new Color(1, 1, 1, 0));
