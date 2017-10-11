@@ -3,7 +3,7 @@ Shader "Room/ThreeDScans"
     Properties
     {
         // Render mode options
-        [KeywordEnum(Default, Helix, Vacs)] 
+        [KeywordEnum(Default, Helix, Vacs)]
         _Mode("", Float) = 0
 
         // Base maps
