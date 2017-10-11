@@ -1,11 +1,9 @@
-﻿Shader "Room/Head"
+﻿Shader "Hidden/Room/Head"
 {
     Properties
     {
         _MainTex("Face Texture", 2D) = "gray" {}
         [HDR] _Color("Color", Color) = (1, 1, 1, 1)
-        _GradFreq("Gradient Frequency", Float) = 4
-        _GradOffs("Gradient Offset", Float) = 0
     }
     SubShader
     {
@@ -41,13 +39,10 @@
         half _GradFreq;
         float _GradOffs;
 
-        float4x4 _ExtraTransform;
-
         void Vertex(inout appdata_full input, out Input data)
         {
             UNITY_INITIALIZE_OUTPUT(Input, data);
             data.localCoord = input.vertex.xyz;
-            input.vertex = mul(_ExtraTransform, input.vertex);
         }
 
         void Surface(Input IN, inout SurfaceOutputStandard o)

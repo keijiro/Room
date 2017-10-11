@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 114393192993503636}
   - {fileID: 114063371608071440}
   - {fileID: 114252020484608760}
-  - {fileID: 114795078213665690}
   - {fileID: 114120297345924374}
+  - {fileID: 114795078213665690}
   - {fileID: 114927298791949266}
   m_FixedDuration: 0
   m_EditorSettings:
@@ -436,9 +436,9 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _accent
-    path: Head Pivot/Head 1
+    path: Head
     classID: 114
-    script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+    script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -448,9 +448,9 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 673998512
+      path: 130111906
       attribute: 2656187752
-      script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+      script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
@@ -717,9 +717,9 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _accent
-    path: Head Pivot/Head 1
+    path: Head
     classID: 114
-    script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+    script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
@@ -1216,9 +1216,9 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _accent
-    path: Head Pivot/Head 2
+    path: Head
     classID: 114
-    script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+    script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -1228,9 +1228,9 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2972006154
+      path: 130111906
       attribute: 2656187752
-      script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+      script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
@@ -1497,9 +1497,9 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _accent
-    path: Head Pivot/Head 2
+    path: Head
     classID: 114
-    script: {fileID: 11500000, guid: 07576af3305ccd94da2df516a4bc1971, type: 3}
+    script: {fileID: 11500000, guid: 481639987913315469b6535a40e6472e, type: 3}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: Light Sphere
+  m_Name: Core
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: Light
+  m_Name: Core
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: Light Chain
+  m_Name: Chain
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: Light Chain
+  m_Name: Chain
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
