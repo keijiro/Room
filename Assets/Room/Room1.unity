@@ -555,7 +555,9 @@ MonoBehaviour:
   _threshold: 0.5
   _param1: 6
   _param2: 2
-  _effectAxis: {fileID: 1389324480}
+  _param3: 0
+  _param4: 0
+  _effectOrigin: {fileID: 1389324480}
 --- !u!1 &597312884
 GameObject:
   m_ObjectHideFlags: 0

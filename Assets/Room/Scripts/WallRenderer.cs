@@ -11,7 +11,7 @@ namespace Room
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
 
-        enum Mode { Default, Wall }
+        enum Mode { Default, Wall, Stripe }
         [SerializeField] Mode _mode;
 
         [Space]
@@ -25,7 +25,9 @@ namespace Room
         [SerializeField] float _threshold = 0.5f;
         [SerializeField] float _param1;
         [SerializeField] float _param2;
-        [SerializeField] Transform _effectAxis;
+        [SerializeField] float _param3;
+        [SerializeField] float _param4;
+        [SerializeField] Transform _effectOrigin;
 
         #endregion
 
@@ -82,14 +84,14 @@ namespace Room
             _tempMaterial.SetColor("_Color2", _secondaryColor);
             _tempMaterial.SetFloat("_LocalTime", _time * _speed);
             _tempMaterial.SetFloat("_Threshold", _threshold);
-            _tempMaterial.SetFloat("_Param1", _param1);
-            _tempMaterial.SetFloat("_Param2", _param2);
 
-            if (_effectAxis != null)
-            {
-                _tempMaterial.SetVector("_PrimaryAxis", _effectAxis.forward);
-                _tempMaterial.SetVector("_SecondaryAxis", _effectAxis.up);
-            }
+            _tempMaterial.SetVector("_Params", new Vector4(
+                _param1, _param2, _param3, _param4
+            ));
+
+            _tempMaterial.SetMatrix("_WorldToEffect", _effectOrigin != null ?
+                _effectOrigin.worldToLocalMatrix : Matrix4x4.identity
+            );
 
             SyncRenderMode();
 
