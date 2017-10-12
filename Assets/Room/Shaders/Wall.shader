@@ -3,7 +3,7 @@ Shader "Room/Wall"
     Properties
     {
         // Render mode options
-        [KeywordEnum(Default, Wave, Stripe)] 
+        [KeywordEnum(Default, Wave, Stripe, Scroll)] 
         _Mode("", Float) = 0
 
         // Base parameters
@@ -54,7 +54,7 @@ Shader "Room/Wall"
         CGPROGRAM
 
         #pragma surface Surface Standard addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE
+        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL
         #pragma target 3.0
 
         struct Input
@@ -92,6 +92,12 @@ Shader "Room/Wall"
 #elif defined(_MODE_STRIPE)
             float p = frac(fx.z * _Params.x + _LocalTime);
             p = smoothstep(1, 1.01, 2 * abs(p - 0.5) + _Threshold);
+            o.Albedo = lerp(_Color1, _Color2, p);
+#elif defined(_MODE_SCROLL)
+            uint seed = floor(fx.y * _Params.x) + 10000;
+            float offs = lerp(0.2, 1, Random(seed)) * (100 + _LocalTime);
+            float p = frac(fx.x * _Params.y + offs);
+            p = smoothstep(1, 1.05, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
 #else
             o.Albedo = _Color1;
