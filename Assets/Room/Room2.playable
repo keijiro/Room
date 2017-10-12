@@ -275,6 +275,86 @@ AnimationClip:
     path: Confetti R
     classID: 114
     script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 2.1
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 2.15
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 6.2833333
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 6.3333335
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _throttle
+    path: Confetti L E
+    classID: 114
+    script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.1833334
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.233333
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 8.366667
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 8.416667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _throttle
+    path: Confetti R E
+    classID: 114
+    script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -292,6 +372,20 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3742063118
+      attribute: 3306950028
+      script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3513665367
+      attribute: 3306950028
+      script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3352742189
       attribute: 3306950028
       script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
       typeID: 114
@@ -397,6 +491,86 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: _throttle
     path: Confetti R
+    classID: 114
+    script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 2.1
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 2.15
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 6.2833333
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 6.3333335
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _throttle
+    path: Confetti L E
+    classID: 114
+    script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.1833334
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.233333
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 8.366667
+        value: 0.040379547
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 8.416667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _throttle
+    path: Confetti R E
     classID: 114
     script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_EulerEditorCurves: []

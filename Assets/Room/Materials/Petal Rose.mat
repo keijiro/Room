@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Petal
+  m_Name: Petal Rose
   m_Shader: {fileID: 4800000, guid: b100b14e682fd1643af3bcb3b08fd247, type: 3}
   m_ShaderKeywords: _COLORMODE_RANDOM
   m_LightmapFlags: 4
