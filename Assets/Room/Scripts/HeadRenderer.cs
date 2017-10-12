@@ -99,6 +99,7 @@ namespace Room
 
             // Update the material properties.
             var face = Mathf.FloorToInt(_faceSelect * _faceTextures.Length);
+            face = Mathf.Clamp(face, 0, _faceTextures.Length - 1);
             _faceMaterial.SetTexture("_MainTex", _faceTextures[face]);
 
             _faceMaterial.SetColor("_Color", new Color(1, 1, 1, 1));
