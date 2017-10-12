@@ -3,7 +3,7 @@ Shader "Room/ThreeDScans"
     Properties
     {
         // Render mode options
-        [KeywordEnum(Default, Helix, Vacs)]
+        [KeywordEnum(Default, Vacs, Slice, Helix)]
         _Mode("", Float) = 0
 
         // Base maps
@@ -41,7 +41,7 @@ Shader "Room/ThreeDScans"
         CGPROGRAM
 
         #pragma surface Surface Standard vertex:Vertex addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_HELIX _MODE_VACS
+        #pragma multi_compile _MODE_DEFAULT _MODE_VACS _MODE_SLICE _MODE_HELIX
         #pragma target 3.0
 
         struct Attributes
@@ -95,6 +95,10 @@ Shader "Room/ThreeDScans"
         uint _TriangleCount;
     #endif
 
+        float _LocalTime;
+        float _Threshold;
+        float4 _Params;
+
         void Vertex(inout Attributes vertex, out Input data)
         {
             UNITY_INITIALIZE_OUTPUT(Input, data);
@@ -120,7 +124,10 @@ Shader "Room/ThreeDScans"
 
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
-        #if defined(_MODE_HELIX)
+        #if defined(_MODE_SLICE)
+            float pt = (IN.localCoord.y + _LocalTime) * _Params.x;
+            clip(abs(frac(pt) - 0.5) * 2 - _Threshold);
+        #elif defined(_MODE_HELIX)
             float phi = atan2(IN.localCoord.z, IN.localCoord.x);
             clip(frac(IN.localCoord.y * 8 + phi / UNITY_PI) - 0.5);
         #endif

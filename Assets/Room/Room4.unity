@@ -851,7 +851,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 822811d2c5d04ae42b42ae49150cafe1, type: 3}
   _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
-  _mode: 0
+  _mode: 2
+  _speed: 0.1
+  _threshold: 0.5
+  _param1: 6
+  _param2: 0
+  _param3: 0
+  _param4: 0
 --- !u!1 &1099609128
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +900,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300004, guid: cb16f5e913ff9ae43bc6d95c5f7a614a, type: 3}
   _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
-  _mode: 0
+  _mode: 2
+  _speed: 0.1
+  _threshold: 0.5
+  _param1: 6
+  _param2: 0
+  _param3: 0
+  _param4: 0
 --- !u!1 &1230180478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 1, z: -2.2}
   _emitterSize: {x: 2.7, y: 2, z: 6}
-  _throttle: 0
+  _throttle: 0.08
   _life: 3
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}

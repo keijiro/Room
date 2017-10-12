@@ -11,8 +11,16 @@ namespace Room
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
 
-        enum Mode { Default, Helix }
+        enum Mode { Default, Vacs, Slice, Helix }
         [SerializeField] Mode _mode;
+
+        [Space]
+        [SerializeField] float _speed = 1;
+        [SerializeField] float _threshold = 0.5f;
+        [SerializeField] float _param1;
+        [SerializeField] float _param2;
+        [SerializeField] float _param3;
+        [SerializeField] float _param4;
 
         #endregion
 
@@ -61,7 +69,13 @@ namespace Room
 
             // Update the material properties.
             _tempMaterial.CopyPropertiesFromMaterial(_material);
-            _tempMaterial.SetFloat("_LocalTime", _time);
+            _tempMaterial.SetFloat("_LocalTime", _time * _speed);
+            _tempMaterial.SetFloat("_Threshold", _threshold);
+
+            _tempMaterial.SetVector("_Params", new Vector4(
+                _param1, _param2, _param3, _param4
+            ));
+
             SyncRenderMode();
 
             // Draw request
