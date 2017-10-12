@@ -129,7 +129,8 @@ Shader "Room/ThreeDScans"
             clip(abs(frac(pt) - 0.5) * 2 - _Threshold);
         #elif defined(_MODE_HELIX)
             float phi = atan2(IN.localCoord.z, IN.localCoord.x);
-            clip(frac(IN.localCoord.y * 8 + phi / UNITY_PI) - 0.5);
+            float t = IN.localCoord.y * _Params.x + phi / UNITY_PI;
+            clip(frac(t + _LocalTime) - _Threshold);
         #endif
 
             // Surface flip
