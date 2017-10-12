@@ -165,7 +165,9 @@ GameObject:
   - component: {fileID: 204667092}
   - component: {fileID: 204667091}
   - component: {fileID: 204667090}
+  - component: {fileID: 204667098}
   - component: {fileID: 204667094}
+  - component: {fileID: 204667097}
   - component: {fileID: 204667096}
   - component: {fileID: 204667095}
   m_Layer: 0
@@ -327,8 +329,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bleeding: 0.25
   _fringing: 0.5
-  _scanline: 0.13
+  _scanline: 0.161
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
+--- !u!114 &204667097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204667089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8e0d4b232a1475283137c73daf58a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color1: {r: 1, g: 0, b: 0, a: 1}
+  _color2: {r: 0.24137902, g: 1, b: 0, a: 1}
+  _angle: 90
+  _opacity: 0.09
+  _blendMode: 2
+  _debug: 0
+  _shader: {fileID: 4800000, guid: 0eccb83e08c1a4981813863cbdebc044, type: 3}
+--- !u!114 &204667098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204667089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70081bef98ab8dd459e38072395393ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 1.4
+  _stretch: 0.75
+  _intensity: 0.2
+  _tint: {r: 0.6838235, g: 0.6838235, b: 1, a: 1}
+  _shader: {fileID: 4800000, guid: 10949a53e15fb4a4589953320ecc54b6, type: 3}
 --- !u!1 &238890061
 GameObject:
   m_ObjectHideFlags: 0
