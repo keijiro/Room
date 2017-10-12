@@ -54,7 +54,7 @@ Shader "Room/Wall"
         CGPROGRAM
 
         #pragma surface Surface Standard addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL
+        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL _MODE_RIPPLE
         #pragma target 3.0
 
         struct Input
@@ -81,6 +81,19 @@ Shader "Room/Wall"
         float _Threshold;
         float4 _Params;
 
+        float Ripple(float3 fx, float param, uint seed)
+        {
+            seed += floor(param) * 2;
+
+            fx.x += lerp(-1.1, 1.1, Random(seed + 0));
+            fx.y += lerp(-0.8, 0.8, Random(seed + 1));
+
+            float t = frac(param);
+            float d = distance(fx, 0) * 0.3;
+            float p = saturate(d - t + 1) * saturate(1 - t) * (d - t < 0);
+            return saturate(frac(d * 10) * p);
+        }
+
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
             float3 fx = mul(_WorldToEffect, float4(IN.worldPos, 1)).xyz;
@@ -99,6 +112,12 @@ Shader "Room/Wall"
             float p = frac(fx.x * _Params.y + offs);
             p = smoothstep(1, 1.05, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
+#elif defined(_MODE_RIPPLE)
+            float r1 = Ripple(fx, _Params.x, 18213);
+            float r2 = Ripple(fx, _Params.y, 13284);
+            float r3 = Ripple(fx, _Params.z, 11293);
+            float p = max(r1, max(r2, r3));
+            o.Albedo = lerp(_Color1, _Color2, abs(p - 0.5) < 0.25);
 #else
             o.Albedo = _Color1;
 #endif

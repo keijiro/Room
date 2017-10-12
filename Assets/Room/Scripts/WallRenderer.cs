@@ -11,7 +11,7 @@ namespace Room
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
 
-        enum Mode { Default, Wall, Stripe, Scroll }
+        enum Mode { Default, Wave, Stripe, Scroll, Ripple }
         [SerializeField] Mode _mode;
 
         [Space]

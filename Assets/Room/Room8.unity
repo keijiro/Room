@@ -546,15 +546,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 5358a0b656c06534a8fde1e1736a02ef, type: 3}
   _material: {fileID: 2100000, guid: e9b8f2e526af3814284a4483c05c7303, type: 2}
-  _mode: 2
+  _mode: 4
   _primaryColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _floorColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _ceilingColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _secondaryColor: {r: 1, g: 1, b: 1, a: 1}
   _speed: 0
-  _threshold: 0.1
-  _param1: 2
-  _param2: 0.3
+  _threshold: 0.44
+  _param1: 0
+  _param2: 0
   _param3: 0
   _param4: 0
   _effectOrigin: {fileID: 1389324480}
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _motionType: 2
-  _speed: 6
+  _speed: 4
   _interval: 0.56
   _multiplier: 4
   _randomSeed: 25
@@ -594,7 +594,7 @@ MonoBehaviour:
   _modMultiplier: 3
   _modAmplitude: 0
   _radius: 0.4
-  _ballCount: 16
+  _ballCount: 35
   _ballScale: 0.04
   _color: {r: 2, g: 2, b: 2, a: 1}
   _lineShader: {fileID: 4800000, guid: dc155c5ea6358474bbec90df3a33e3fa, type: 3}
@@ -669,6 +669,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 758468521}
+  - component: {fileID: 758468522}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -691,6 +692,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &758468522
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758468520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1025930103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1139,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 114926619896996182, guid: 786505234c4ae0242a5afa8ced665fa0, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 114404830010572406, guid: 786505234c4ae0242a5afa8ced665fa0, type: 2}
+    value: {fileID: 758468520}
   m_ExposedReferences:
     m_References:
     - ffdf88d45f7901a45a2a9af74191b185: {fileID: 0}
@@ -1195,13 +1215,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389324479}
-  m_LocalRotation: {x: 0.79847795, y: 0, z: 0, w: 0.6020241}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0.972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 378232317}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 105.97, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494268562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 0.8, z: -0.5}
   _emitterSize: {x: 2.7, y: 2, z: 5}
-  _throttle: 0
+  _throttle: 0.058
   _life: 3
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}
@@ -1552,7 +1572,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 183f980d152fafc489f82f2058792e60, type: 2}
+  - {fileID: 2100000, guid: c8a0467474d380f428d2332b8840ba85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
