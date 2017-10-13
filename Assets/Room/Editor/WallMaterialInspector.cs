@@ -13,11 +13,6 @@ namespace Room
 
         public override void OnGUI(MaterialEditor editor, MaterialProperty[] props)
         {
-            // Render mode pop-up
-            editor.ShaderProperty(FindProperty("_Mode", props), "Render Mode");
-
-            EditorGUILayout.Space();
-
             // Base parameters
             editor.ShaderProperty(FindProperty("_Color1", props), "Primary Color");
             editor.ShaderProperty(FindProperty("_Color2", props), "Secondary Color");

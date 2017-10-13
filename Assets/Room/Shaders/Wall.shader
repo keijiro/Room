@@ -2,10 +2,6 @@ Shader "Room/Wall"
 {
     Properties
     {
-        // Render mode options
-        [KeywordEnum(Default, Wave, Stripe, Scroll)] 
-        _Mode("", Float) = 0
-
         // Base parameters
         _Color1("", Color) = (1, 1, 1, 1)
         _Color2("", Color) = (1, 1, 1, 1)
@@ -22,40 +18,17 @@ Shader "Room/Wall"
         _DetailNormalMapScale("", Range(0, 2)) = 1
         _DetailMapScale("", Float) = 1
     }
-
-    CGINCLUDE
-
-    #include "UnityCG.cginc"
-
-    // Hash function from H. Schechter & R. Bridson, goo.gl/RXiKaH
-    uint Hash(uint s)
-    {
-        s ^= 2747636419u;
-        s *= 2654435769u;
-        s ^= s >> 16;
-        s *= 2654435769u;
-        s ^= s >> 16;
-        s *= 2654435769u;
-        return s;
-    }
-
-    float Random(uint seed)
-    {
-        return float(Hash(seed)) / 4294967295.0; // 2^32-1
-    }
-
-    ENDCG
-
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        Cull Off
 
         CGPROGRAM
 
-        #pragma surface Surface Standard addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL _MODE_RIPPLE
+        #pragma surface Surface Standard addshadow nolightmap nolppv
+        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL _MODE_RIPPLE _MODE_LIGHT
         #pragma target 3.0
+
+        #include "Common.cginc"
 
         struct Input
         {
@@ -81,6 +54,8 @@ Shader "Room/Wall"
         float _Threshold;
         float4 _Params;
 
+    #if defined(_MODE_RIPPLE)
+
         float Ripple(float3 fx, float param, uint seed)
         {
             seed += floor(param) * 2;
@@ -94,33 +69,62 @@ Shader "Room/Wall"
             return saturate(frac(d * 10) * p);
         }
 
+    #elif defined(_MODE_LIGHT)
+
+        #include "SimplexNoise2D.hlsl"
+
+        float Light(float x, float offs)
+        {
+            float n = snoise(float2(x    , _LocalTime)) +
+                      snoise(float2(x * 2, _LocalTime)) * 0.5;
+            return abs(n) < _Threshold + offs;
+        }
+
+    #endif
+
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
             float3 fx = mul(_WorldToEffect, float4(IN.worldPos, 1)).xyz;
 
-#if defined(_MODE_WAVE)
+        #if defined(_MODE_WAVE)
+
             float p = frac(fx.z * _Params.x + sin(fx.y * _Params.y + _LocalTime));
             p = smoothstep(1, 1.01, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
-#elif defined(_MODE_STRIPE)
+
+        #elif defined(_MODE_STRIPE)
+
             float p = frac(fx.z * _Params.x + _LocalTime);
             p = smoothstep(1, 1.01, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
-#elif defined(_MODE_SCROLL)
+
+        #elif defined(_MODE_SCROLL)
+
             uint seed = floor(fx.y * _Params.x) + 10000;
             float offs = lerp(0.2, 1, Random(seed)) * (100 + _LocalTime);
             float p = frac(fx.x * _Params.y + offs);
             p = smoothstep(1, 1.05, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
-#elif defined(_MODE_RIPPLE)
+
+        #elif defined(_MODE_RIPPLE)
+
             float r1 = Ripple(fx, _Params.x, 18213);
             float r2 = Ripple(fx, _Params.y, 13284);
             float r3 = Ripple(fx, _Params.z, 11293);
             float p = max(r1, max(r2, r3));
             o.Albedo = lerp(_Color1, _Color2, abs(p - 0.5) < 0.25);
-#else
+
+        #elif defined(_MODE_LIGHT)
+
             o.Albedo = _Color1;
-#endif
+            o.Emission = _Params.x * Light(fx.x     , _Params.z) +
+                         _Params.y * Light(fx.x + 20, _Params.w) * _Color2;
+
+        #else // _MODE_DEFAULT
+
+            o.Albedo = _Color1;
+
+        #endif
 
             float2 uv1 = IN.uv_NormalMap;
             float2 uv2 = uv1 * _DetailMapScale;

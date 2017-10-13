@@ -8,11 +8,9 @@ namespace Room
     {
         #region Editable attributes
 
+        [Space]
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
-
-        enum Mode { Default, Wave, Stripe, Scroll, Ripple }
-        [SerializeField] Mode _mode;
 
         [Space]
         [SerializeField] Color _primaryColor = Color.white;
@@ -20,14 +18,19 @@ namespace Room
         [SerializeField] Color _ceilingColor = Color.white;
         [SerializeField] Color _secondaryColor = Color.white;
 
+        enum Mode { Default, Wave, Stripe, Scroll, Ripple, Light }
+        [Space, SerializeField] Mode _mode;
+        [SerializeField] Transform _effectOrigin;
+
         [Space]
         [SerializeField] float _speed = 1;
         [SerializeField] float _threshold = 0.5f;
+
+        [Space]
         [SerializeField] float _param1;
         [SerializeField] float _param2;
         [SerializeField] float _param3;
         [SerializeField] float _param4;
-        [SerializeField] Transform _effectOrigin;
 
         #endregion
 
@@ -35,19 +38,10 @@ namespace Room
 
         Material _tempMaterial;
         MaterialPropertyBlock _tempSheet;
+        string [] _tempKeywords = new string [] { "" };
 
         bool _underTimeControl;
         float _time;
-
-        void SyncRenderMode()
-        {
-            var index = (int)_tempMaterial.GetFloat("_Mode");
-            if (index == (int)_mode) return;
-
-            var keyword = "_MODE_" + _mode.ToString().ToUpper();
-            _tempMaterial.shaderKeywords = new string [] { keyword };
-            _tempMaterial.SetFloat("_Mode", (float)_mode);
-        }
 
         #endregion
 
@@ -80,6 +74,7 @@ namespace Room
 
             // Update the material properties.
             _tempMaterial.CopyPropertiesFromMaterial(_material);
+
             _tempMaterial.SetColor("_Color1", _primaryColor);
             _tempMaterial.SetColor("_Color2", _secondaryColor);
             _tempMaterial.SetFloat("_LocalTime", _time * _speed);
@@ -93,18 +88,20 @@ namespace Room
                 _effectOrigin.worldToLocalMatrix : Matrix4x4.identity
             );
 
-            SyncRenderMode();
+            _tempKeywords[0] = "_MODE_" + _mode.ToString().ToUpper();
+            _tempMaterial.shaderKeywords = _tempKeywords;
 
             // Draw request
             var mtx = transform.localToWorldMatrix;
             Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 0);
-            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 3);
+            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 1);
+            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 4);
 
             _tempSheet.SetColor("_Color1", _floorColor);
-            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 2, _tempSheet);
+            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 3, _tempSheet);
 
             _tempSheet.SetColor("_Color1", _ceilingColor);
-            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 1, _tempSheet);
+            Graphics.DrawMesh(_mesh, mtx, _tempMaterial, gameObject.layer, null, 2, _tempSheet);
 
             // Update the time.
             if (!_underTimeControl)
