@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Wall
   m_Shader: {fileID: 4800000, guid: 7167b41f8c695084585e5c0620386aee, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _MODE_WAVE _NORMALMAP
+  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -72,7 +72,6 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 1
     - _NormalMapScale: 0.935
     - _OcclusionMapStrength: 0.6
     - _OcclusionStrength: 0.7
@@ -86,6 +85,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.99264705, g: 0.3430471, b: 0.54464704, a: 1}
-    - _Color1: {r: 1, g: 0.25735295, b: 0.48782954, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

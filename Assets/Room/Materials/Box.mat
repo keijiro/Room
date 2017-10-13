@@ -68,7 +68,6 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 0
     - _NormalMapScale: 0.935
     - _OcclusionMapStrength: 0.2
     - _OcclusionStrength: 0.7
@@ -82,6 +81,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.99264705, g: 0.3430471, b: 0.54464704, a: 1}
-    - _Color1: {r: 0.992647, g: 0.34304705, b: 0.54464704, a: 1}
-    - _Color2: {r: 0.992647, g: 0.34304705, b: 0.54464704, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
