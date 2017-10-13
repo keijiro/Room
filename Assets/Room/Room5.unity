@@ -314,7 +314,7 @@ MonoBehaviour:
   _allowSlowDown: 1
   _codec: 0
   _startTime: 0
-  _recordLength: 9.333333
+  _recordLength: 10
   _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
 --- !u!114 &204667096
 MonoBehaviour:

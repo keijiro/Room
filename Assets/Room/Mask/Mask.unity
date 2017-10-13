@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b049dd62428f9824a8ec82f68701fd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 1.5
   _shader: {fileID: 4800000, guid: 71514533702a128449e89a8cb32df5c8, type: 3}
 --- !u!114 &1827457541
 MonoBehaviour:

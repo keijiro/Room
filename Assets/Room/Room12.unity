@@ -315,7 +315,7 @@ MonoBehaviour:
   _allowSlowDown: 1
   _codec: 0
   _startTime: 0
-  _recordLength: 9.333333
+  _recordLength: 14
   _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
 --- !u!114 &204667096
 MonoBehaviour:
@@ -1451,7 +1451,7 @@ ReflectionProbe:
   m_Type: 0
   m_Mode: 1
   m_RefreshMode: 1
-  m_TimeSlicingMode: 0
+  m_TimeSlicingMode: 2
   m_Resolution: 512
   m_UpdateFrequency: 0
   m_BoxSize: {x: 2.7, y: 1.6, z: 2}

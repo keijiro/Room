@@ -10,7 +10,9 @@
     #include "UnityCG.cginc"
 
     sampler2D _MainTex;
-    float4 _Color;
+
+    float4 _Color1;
+    float4 _Color2;
 
     uint _Seed;
     float _LocalTime;
@@ -48,8 +50,7 @@
 
     fixed4 frag(v2f_img i) : SV_Target
     {
-        fixed4 src = tex2D(_MainTex, i.uv);
-        return lerp(src, _Color, Wiper(i.uv, _LocalTime, _Seed));
+        return lerp(_Color1, _Color2, Wiper(i.uv, _LocalTime, _Seed));
     }
 
     ENDCG

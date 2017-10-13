@@ -32,7 +32,10 @@ namespace Room
             var seed = Mathf.FloorToInt(time);
             time = Mathf.Min(1, (time - seed) * 1.1f);
 
-            _material.SetColor("_Color", Color.white);
+            var flip = (seed & 1) != 0;
+
+            _material.SetColor("_Color1", flip ? Color.white : Color.black);
+            _material.SetColor("_Color2", flip ? Color.black : Color.white);
             _material.SetInt("_Seed", seed);
             _material.SetFloat("_LocalTime", time);
 

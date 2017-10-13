@@ -314,7 +314,7 @@ MonoBehaviour:
   _allowSlowDown: 1
   _codec: 0
   _startTime: 0
-  _recordLength: 9.333333
+  _recordLength: 10
   _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
 --- !u!114 &204667096
 MonoBehaviour:
@@ -546,18 +546,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 5358a0b656c06534a8fde1e1736a02ef, type: 3}
   _material: {fileID: 2100000, guid: e9b8f2e526af3814284a4483c05c7303, type: 2}
-  _mode: 4
   _primaryColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _floorColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _ceilingColor: {r: 0.280439, g: 0.5450088, b: 0.97794116, a: 1}
   _secondaryColor: {r: 1, g: 1, b: 1, a: 1}
+  _mode: 4
+  _effectOrigin: {fileID: 1389324480}
   _speed: 0
   _threshold: 0.44
   _param1: 0
   _param2: 0
   _param3: 0
   _param4: 0
-  _effectOrigin: {fileID: 1389324480}
 --- !u!1 &597312884
 GameObject:
   m_ObjectHideFlags: 0
