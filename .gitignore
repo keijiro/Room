@@ -13,6 +13,8 @@ Desktop.ini
 /Temp
 /Packages
 
+*.mov
+
 /Extras/backup
 /Extras/obj
 
