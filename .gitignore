@@ -22,6 +22,8 @@ Desktop.ini
 /Assets/StreamingAssets/FFmpegOut
 /Assets/StreamingAssets/FFmpegOut.meta
 
+/Assets/PostProcessing
+
 /Assets/Room/Private/*.wav
 /Assets/Room/Private/*.jpg
 /Assets/Room/Private/*.png
