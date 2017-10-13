@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Athena
   m_Shader: {fileID: 4800000, guid: 4e4de1e2512637844a7e148b343d48ac, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _MODE_DEFAULT _NORMALMAP
+  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -45,7 +45,6 @@ Material:
     - _Metallic1: 0.378
     - _Metallic2: 0.272
     - _Metallic3: 0
-    - _Mode: 0
     - _OcclusionMapStrength: 0.73
     - _Smoothness1: 0
     - _Smoothness2: 0.445

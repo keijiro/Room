@@ -8,15 +8,18 @@ namespace Room
     {
         #region Editable attributes
 
+        [Space]
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
 
-        enum Mode { Default, Vacs, Slice, Helix }
-        [SerializeField] Mode _mode;
+        enum Mode { Default, Slice, Helix }
+        [Space, SerializeField] Mode _mode;
 
         [Space]
         [SerializeField] float _speed = 1;
         [SerializeField] float _threshold = 0.5f;
+
+        [Space]
         [SerializeField] float _param1;
         [SerializeField] float _param2;
         [SerializeField] float _param3;
@@ -27,19 +30,10 @@ namespace Room
         #region Private variables and methods
 
         Material _tempMaterial;
+        string [] _tempKeywords = new string [] { "" };
 
         bool _underTimeControl;
         float _time;
-
-        void SyncRenderMode()
-        {
-            var index = (int)_tempMaterial.GetFloat("_Mode");
-            if (index == (int)_mode) return;
-
-            var keyword = "_MODE_" + _mode.ToString().ToUpper();
-            _tempMaterial.shaderKeywords = new string [] { keyword };
-            _tempMaterial.SetFloat("_Mode", (float)_mode);
-        }
 
         #endregion
 
@@ -69,6 +63,7 @@ namespace Room
 
             // Update the material properties.
             _tempMaterial.CopyPropertiesFromMaterial(_material);
+
             _tempMaterial.SetFloat("_LocalTime", _time * _speed);
             _tempMaterial.SetFloat("_Threshold", _threshold);
 
@@ -76,7 +71,8 @@ namespace Room
                 _param1, _param2, _param3, _param4
             ));
 
-            SyncRenderMode();
+            _tempKeywords[0] = "_MODE_" + _mode.ToString().ToUpper();
+            _tempMaterial.shaderKeywords = _tempKeywords;
 
             // Draw request
             Graphics.DrawMesh(

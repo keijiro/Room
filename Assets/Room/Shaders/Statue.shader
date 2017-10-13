@@ -1,11 +1,7 @@
-Shader "Room/ThreeDScans"
+Shader "Room/Statue"
 {
     Properties
     {
-        // Render mode options
-        [KeywordEnum(Default, Vacs, Slice, Helix)]
-        _Mode("", Float) = 0
-
         // Base maps
         _NormalMap("", 2D) = "bump" {}
         _OcclusionMap("", 2D) = "white" {}
@@ -40,18 +36,9 @@ Shader "Room/ThreeDScans"
 
         CGPROGRAM
 
-        #pragma surface Surface Standard vertex:Vertex addshadow nolightmap exclude_path:forward
-        #pragma multi_compile _MODE_DEFAULT _MODE_VACS _MODE_SLICE _MODE_HELIX
+        #pragma surface Surface Standard vertex:Vertex addshadow nolightmap nolppv
+        #pragma multi_compile _MODE_DEFAULT _MODE_SLICE _MODE_HELIX
         #pragma target 3.0
-
-        struct Attributes
-        {
-            float4 vertex : POSITION;
-            float4 tangent : TANGENT;
-            float3 normal : NORMAL;
-            float2 texCoord : TEXCOORD0;
-            uint vertexID : SV_VertexID;
-        };
 
         struct Input
         {
@@ -59,9 +46,6 @@ Shader "Room/ThreeDScans"
             float3 localCoord;
             float3 localNormal;
             float vface : VFACE;
-        #if defined(_MODE_VACS)
-            float flat;
-        #endif
         };
 
         sampler2D _NormalMap;
@@ -86,51 +70,31 @@ Shader "Room/ThreeDScans"
         half _DetailNormalMapScale;
         half _DetailMapScale;
 
-    #if defined(_MODE_VACS) && defined(UNITY_COMPILER_HLSL)
-        StructuredBuffer<float4> _OriginalPositionBuffer;
-        StructuredBuffer<float4> _OriginalNormalBuffer;
-        StructuredBuffer<float4> _PositionBuffer;
-        StructuredBuffer<float4> _NormalBuffer;
-        StructuredBuffer<float4> _TangentBuffer;
-        uint _TriangleCount;
-    #endif
-
         float _LocalTime;
         float _Threshold;
         float4 _Params;
 
-        void Vertex(inout Attributes vertex, out Input data)
+        void Vertex(inout appdata_full vertex, out Input data)
         {
             UNITY_INITIALIZE_OUTPUT(Input, data);
-
-            data.texCoord = vertex.texCoord;
-
-        #if defined(_MODE_VACS) && defined(UNITY_COMPILER_HLSL)
-            const uint vid = vertex.vertexID;
-            const uint offs = vid / 3 + (vid % 3) * _TriangleCount;
-
-            vertex.vertex.xyz = _PositionBuffer[offs].xyz;
-            vertex.normal.xyz = _NormalBuffer[offs].xyz;
-            vertex.tangent = _TangentBuffer[offs];
-
-            data.localCoord = _OriginalPositionBuffer[offs].xyz;
-            data.localNormal = _OriginalNormalBuffer[offs].xyz;
-            data.flat = _NormalBuffer[offs].w;
-        #else
+            data.texCoord = vertex.texcoord.xy;
             data.localCoord = vertex.vertex.xyz;
             data.localNormal = vertex.normal.xyz;
-        #endif
         }
 
         void Surface(Input IN, inout SurfaceOutputStandard o)
         {
         #if defined(_MODE_SLICE)
+
             float pt = (IN.localCoord.y + _LocalTime) * _Params.x;
             clip(abs(frac(pt) - 0.5) * 2 - _Threshold);
+
         #elif defined(_MODE_HELIX)
+
             float phi = atan2(IN.localCoord.z, IN.localCoord.x);
             float t = IN.localCoord.y * _Params.x + phi / UNITY_PI;
             clip(frac(t + _LocalTime) - _Threshold);
+
         #endif
 
             // Surface flip
@@ -166,13 +130,13 @@ Shader "Room/ThreeDScans"
             o.Occlusion = LerpOneTo(occ, _OcclusionMapStrength);
 
             // Etc.
-            o.Metallic = lerp(_Metallic1, _Metallic2, cv);
-            o.Smoothness = lerp(_Smoothness1, _Smoothness2, cv);
+            o.Metallic = lerp(lerp(_Metallic1, _Metallic2, cv), _Metallic3, flip);
+            o.Smoothness = lerp(lerp(_Smoothness1, _Smoothness2, cv), _Smoothness3, flip);
         }
 
         ENDCG
     }
 
     FallBack "Diffuse"
-    CustomEditor "Room.ThreeDScansMaterialInspector"
+    CustomEditor "Room.StatueMaterialInspector"
 }

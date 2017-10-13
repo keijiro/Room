@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace Room
 {
-    public class ThreeDScansMaterialInspector : ShaderGUI
+    public class StatueMaterialInspector : ShaderGUI
     {
         static class Labels
         {
@@ -15,11 +15,6 @@ namespace Room
 
         public override void OnGUI(MaterialEditor editor, MaterialProperty[] props)
         {
-            // Render mode pop-up
-            editor.ShaderProperty(FindProperty("_Mode", props), "Render Mode");
-
-            EditorGUILayout.Space();
-
             // Base maps
             EditorGUILayout.LabelField("Base Maps", EditorStyles.boldLabel);
 

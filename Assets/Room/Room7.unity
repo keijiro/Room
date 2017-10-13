@@ -546,18 +546,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 5358a0b656c06534a8fde1e1736a02ef, type: 3}
   _material: {fileID: 2100000, guid: e9b8f2e526af3814284a4483c05c7303, type: 2}
-  _mode: 3
   _primaryColor: {r: 0, g: 0, b: 0, a: 1}
   _floorColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
   _ceilingColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
   _secondaryColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
+  _mode: 3
+  _effectOrigin: {fileID: 1389324480}
   _speed: 4.5
   _threshold: 0.5
   _param1: 38
   _param2: 0.3
   _param3: 0
   _param4: 0
-  _effectOrigin: {fileID: 1389324480}
 --- !u!1 &597312884
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 822811d2c5d04ae42b42ae49150cafe1, type: 3}
   _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
-  _mode: 2
+  _mode: 1
   _speed: 0.2
   _threshold: 0.5
   _param1: 8
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300004, guid: cb16f5e913ff9ae43bc6d95c5f7a614a, type: 3}
   _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
-  _mode: 2
+  _mode: 1
   _speed: 0.2
   _threshold: 0.5
   _param1: 8
