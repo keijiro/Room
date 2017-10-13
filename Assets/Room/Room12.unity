@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.2647059, g: 0.2647059, b: 0.2647059, a: 1}
+  m_AmbientSkyColor: {r: 0.17647058, g: 0.17647058, b: 0.17647058, a: 1}
   m_AmbientEquatorColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientGroundColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -448,7 +448,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.05
+  m_Intensity: 0.17
   m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -555,8 +555,8 @@ MonoBehaviour:
   _effectOrigin: {fileID: 1389324480}
   _speed: 1
   _threshold: 0.05
-  _param1: 2
-  _param2: 5
+  _param1: 0
+  _param2: 0
   _param3: 0
   _param4: 0
 --- !u!1 &597312884
@@ -670,6 +670,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 758468521}
+  - component: {fileID: 758468522}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -692,6 +693,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &758468522
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758468520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &984623382
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 1, z: -2.2}
   _emitterSize: {x: 2.7, y: 2, z: 6}
-  _throttle: 0
+  _throttle: 0.05
   _life: 1
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: -0.1, z: -0.2}
@@ -754,11 +772,11 @@ MonoBehaviour:
   _spin: 600
   _speedToSpin: 300
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.06
+  _noiseAmplitude: 0.1
   _noiseFrequency: 0.8
-  _noiseMotion: 1
+  _noiseMotion: 0.5
   _template: {fileID: 11400000, guid: 0aa75d5752865fb4e98bf506174ce586, type: 2}
-  _scale: 0.05
+  _scale: 0.1
   _scaleRandomness: 0.6
   _randomSeed: 20
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
@@ -936,7 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300000, guid: 822811d2c5d04ae42b42ae49150cafe1, type: 3}
-  _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
+  _material: {fileID: 2100000, guid: b69e823e76dca5d4c9fed1cfe663a4fe, type: 2}
   _mode: 0
   _speed: 0
   _threshold: 0.5
@@ -985,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 4300004, guid: cb16f5e913ff9ae43bc6d95c5f7a614a, type: 3}
-  _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
+  _material: {fileID: 2100000, guid: 94bd698432d4e6644b5a6afa70445647, type: 2}
   _mode: 0
   _speed: 0
   _threshold: 0.5
@@ -1323,6 +1341,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 114926619896996182, guid: 52eb853b4f5e8274ebf36d7194168547, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 114407800991726710, guid: 52eb853b4f5e8274ebf36d7194168547, type: 2}
+    value: {fileID: 758468520}
   m_ExposedReferences:
     m_References:
     - ffdf88d45f7901a45a2a9af74191b185: {fileID: 0}
@@ -1369,7 +1389,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1287335874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.95, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1558673036}

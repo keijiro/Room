@@ -349,6 +349,8 @@ namespace LightBallChain
 
         void OnRenderObject()
         {
+            if ((Camera.current.cullingMask & 1) == 0) return;
+
             // FIXME: Actually should I do this???
             if (Camera.current.name == "Preview Scene Camera") return;
 
