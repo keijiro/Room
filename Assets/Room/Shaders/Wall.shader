@@ -58,15 +58,15 @@ Shader "Room/Wall"
 
         float Ripple(float3 fx, float param, uint seed)
         {
-            seed += floor(param) * 2;
+            seed += floor(param) * 8;
 
-            fx.x += lerp(-1.1, 1.1, Random(seed + 0));
-            fx.y += lerp(-0.8, 0.8, Random(seed + 1));
+            fx.x += (Random(seed + 0) - 0.5) * 1.5;
+            fx.y += (Random(seed + 1) - 0.5);
 
             float t = frac(param);
-            float d = distance(fx, 0) * 0.3;
+            float d = distance(fx, 0) * 0.2;
             float p = saturate(d - t + 1) * saturate(1 - t) * (d - t < 0);
-            return saturate(frac(d * 10) * p);
+            return saturate(frac(d * 15) * p);
         }
 
     #elif defined(_MODE_LIGHT)
@@ -108,9 +108,9 @@ Shader "Room/Wall"
 
         #elif defined(_MODE_RIPPLE)
 
-            float r1 = Ripple(fx, _Params.x, 18213);
-            float r2 = Ripple(fx, _Params.y, 13284);
-            float r3 = Ripple(fx, _Params.z, 11293);
+            float r1 = Ripple(fx, _Params.x, 21213);
+            float r2 = Ripple(fx, _Params.y, 44284);
+            float r3 = Ripple(fx, _Params.z, 18293);
             float p = max(r1, max(r2, r3));
             o.Albedo = lerp(_Color1, _Color2, abs(p - 0.5) < 0.25);
 
