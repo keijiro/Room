@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.52411336, g: 0.9632353, b: 0.87238216, a: 1}
-  m_AmbientEquatorColor: {r: 0.7462437, g: 0.897, b: 0.86684877, a: 1}
-  m_AmbientGroundColor: {r: 0.5254902, g: 0.96470594, b: 0.8705883, a: 1}
+  m_AmbientSkyColor: {r: 0.45935202, g: 0.857, b: 0.7747277, a: 1}
+  m_AmbientEquatorColor: {r: 0.77945, g: 0.917, b: 0.890977, a: 1}
+  m_AmbientGroundColor: {r: 0.45882356, g: 0.8588236, b: 0.77647066, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -327,9 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bleeding: 0.25
-  _fringing: 0.5
-  _scanline: 0.13
+  _bleeding: 0.5
+  _fringing: 0.6
+  _scanline: 0
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!114 &204667097
 MonoBehaviour:
@@ -343,9 +343,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color1: {r: 1, g: 0, b: 0.26896572, a: 1}
-  _color2: {r: 0.07586193, g: 0, b: 1, a: 1}
+  _color2: {r: 1, g: 0.3517241, b: 0, a: 1}
   _angle: 90
-  _opacity: 0.04
+  _opacity: 0.08
   _blendMode: 2
   _debug: 0
   _shader: {fileID: 4800000, guid: 0eccb83e08c1a4981813863cbdebc044, type: 3}
@@ -547,15 +547,15 @@ MonoBehaviour:
   _mesh: {fileID: 4300000, guid: 5358a0b656c06534a8fde1e1736a02ef, type: 3}
   _material: {fileID: 2100000, guid: e9b8f2e526af3814284a4483c05c7303, type: 2}
   _primaryColor: {r: 1, g: 1, b: 1, a: 1}
-  _floorColor: {r: 0.056660898, g: 0.9632353, b: 0.77566797, a: 1}
-  _ceilingColor: {r: 0.056660898, g: 0.9632353, b: 0.77566797, a: 1}
-  _secondaryColor: {r: 0.056660898, g: 0.9632353, b: 0.77566797, a: 1}
+  _floorColor: {r: 1, g: 1, b: 1, a: 1}
+  _ceilingColor: {r: 1, g: 1, b: 1, a: 1}
+  _secondaryColor: {r: 0.07720587, g: 0.75, b: 0.6108009, a: 1}
   _mode: 3
   _effectOrigin: {fileID: 1389324480}
-  _speed: 2
+  _speed: 3
   _threshold: 0.5
-  _param1: 14
-  _param2: 0.1
+  _param1: 16
+  _param2: 0.3
   _param3: 0
   _param4: 0
 --- !u!1 &597312884
@@ -760,12 +760,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 1, z: -2.2}
   _emitterSize: {x: 2.7, y: 2, z: 6}
-  _throttle: 0.15
+  _throttle: 0.18
   _life: 3
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 0}
+  _initialVelocity: {x: 0, y: 0, z: 0.1}
   _directionSpread: 0
-  _speedRandomness: 0.5
+  _speedRandomness: 0.8
   _acceleration: {x: 0, y: 0, z: 1}
   _drag: 0.1
   _spin: 600
@@ -775,8 +775,8 @@ MonoBehaviour:
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: 0aa75d5752865fb4e98bf506174ce586, type: 2}
-  _scale: 0.14
-  _scaleRandomness: 0.6
+  _scale: 0.12
+  _scaleRandomness: 1
   _randomSeed: 2
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
   _defaultMaterial: {fileID: 2100000, guid: 0139c04a93166b843be379e0cc915782, type: 2}
@@ -911,7 +911,7 @@ MonoBehaviour:
   _boxMaterial: {fileID: 2100000, guid: 28496193ec2596f4ab2918b478d3c7d1, type: 2}
   _coneMaterial: {fileID: 2100000, guid: e6b6f907bfe4cd040b5d14bf7d810bf1, type: 2}
   _pillarMaterial: {fileID: 2100000, guid: 88b1d81e7cf54f749be2d7d619df819b, type: 2}
-  _color: {r: 0.056660898, g: 0.9632353, b: 0.77566797, a: 1}
+  _color: {r: 0.07720587, g: 0.75, b: 0.6108009, a: 1}
 --- !u!1 &1080750638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,13 +1368,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389324479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2840153, w: 0.95881975}
   m_LocalPosition: {x: 0, y: 0.8, z: 0.972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 378232317}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33}
 --- !u!1 &1494268562
 GameObject:
   m_ObjectHideFlags: 0
