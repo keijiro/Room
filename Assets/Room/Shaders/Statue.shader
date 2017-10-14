@@ -37,7 +37,7 @@ Shader "Room/Statue"
         CGPROGRAM
 
         #pragma surface Surface Standard vertex:Vertex addshadow nolightmap nolppv
-        #pragma multi_compile _MODE_DEFAULT _MODE_SLICE _MODE_HELIX
+        #pragma multi_compile _MODE_DEFAULT _MODE_SLICE _MODE_HELIX _MODE_SPIKE
         #pragma target 3.0
 
         struct Input
@@ -74,12 +74,37 @@ Shader "Room/Statue"
         float _Threshold;
         float4 _Params;
 
+    #if defined(_MODE_SPIKE)
+
+        #include "SimplexNoise3D.hlsl"
+
+        float3 DisplaceVertex(float3 position, float3 normal)
+        {
+            float3 p = position + float3(0, _LocalTime, 0);
+            float n = pow(abs(snoise(p * _Params.z)), _Params.w);
+            return position + normal * n * _Params.x * _Params.y;
+        }
+
+    #endif
+
         void Vertex(inout appdata_full vertex, out Input data)
         {
             UNITY_INITIALIZE_OUTPUT(Input, data);
+
             data.texCoord = vertex.texcoord.xy;
             data.localCoord = vertex.vertex.xyz;
-            data.localNormal = vertex.normal.xyz;
+            data.localNormal = vertex.normal;
+
+    #if defined(_MODE_SPIKE)
+            float3 v1 = DisplaceVertex(vertex.vertex.xyz, vertex.normal);
+            float3 v2 = DisplaceVertex(vertex.texcoord1.xyz, vertex.normal);
+            float3 v3 = DisplaceVertex(vertex.texcoord2.xyz, vertex.normal);
+            float3 bn = cross(vertex.normal, vertex.tangent.xyz);
+
+            vertex.vertex.xyz = v1;
+            vertex.normal = normalize(cross(v2 - v1, v3 - v1));
+            vertex.tangent.xyz = normalize(cross(bn, vertex.normal));
+    #endif
         }
 
         void Surface(Input IN, inout SurfaceOutputStandard o)

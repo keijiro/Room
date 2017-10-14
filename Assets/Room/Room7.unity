@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.92549026, g: 0.5529412, b: 0.5529412, a: 1}
-  m_AmbientEquatorColor: {r: 0.644, g: 0.43598798, b: 0.43598798, a: 1}
-  m_AmbientGroundColor: {r: 0.9264706, g: 0.551795, b: 0.551795, a: 1}
+  m_AmbientSkyColor: {r: 0.8313726, g: 0.20000002, b: 0.20000002, a: 1}
+  m_AmbientEquatorColor: {r: 0.897, g: 0.671853, b: 0.671853, a: 1}
+  m_AmbientGroundColor: {r: 0.8308824, g: 0.20161116, b: 0.20161116, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -327,8 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bleeding: 0.3
-  _fringing: 0.5
+  _bleeding: 0.46
+  _fringing: 0.56
   _scanline: 0
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!114 &204667097
@@ -342,10 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8e0d4b232a1475283137c73daf58a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color1: {r: 0, g: 0.17241383, b: 1, a: 1}
-  _color2: {r: 0.36551726, g: 1, b: 0, a: 1}
-  _angle: 90
-  _opacity: 0.005
+  _color1: {r: 0, g: 0.503448, b: 1, a: 1}
+  _color2: {r: 0, g: 1, b: 0.8344829, a: 1}
+  _angle: -90
+  _opacity: 0.14
   _blendMode: 2
   _debug: 0
   _shader: {fileID: 4800000, guid: 0eccb83e08c1a4981813863cbdebc044, type: 3}
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _threshold: 1.4
   _stretch: 0.75
-  _intensity: 0.27
+  _intensity: 0.28
   _tint: {r: 0.6838235, g: 0.6838235, b: 1, a: 1}
   _shader: {fileID: 4800000, guid: 10949a53e15fb4a4589953320ecc54b6, type: 3}
 --- !u!1 &238890061
@@ -547,14 +547,14 @@ MonoBehaviour:
   _mesh: {fileID: 4300000, guid: 5358a0b656c06534a8fde1e1736a02ef, type: 3}
   _material: {fileID: 2100000, guid: e9b8f2e526af3814284a4483c05c7303, type: 2}
   _primaryColor: {r: 0, g: 0, b: 0, a: 1}
-  _floorColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
+  _floorColor: {r: 0.8000001, g: 0.054901965, b: 0.054901965, a: 1}
   _ceilingColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
   _secondaryColor: {r: 0.8014706, g: 0.053038497, b: 0.053038497, a: 1}
   _mode: 3
   _effectOrigin: {fileID: 1389324480}
   _speed: 4.5
   _threshold: 0.5
-  _param1: 38
+  _param1: 20
   _param2: 0.3
   _param3: 0
   _param4: 0
@@ -831,15 +831,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300000, guid: 6a51f710531be15489f4abe4085cd9a7, type: 3}
+  _mesh: {fileID: 4300000, guid: f7ad204e4f7529e4baf9d4431ec90ce4, type: 2}
   _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
-  _mode: 1
-  _speed: 0.2
-  _threshold: 0.5
-  _param1: 8
-  _param2: 0
-  _param3: 0
-  _param4: 0
+  _mode: 3
+  _speed: 0.05
+  _threshold: 0
+  _param1: 0.62
+  _param2: 2
+  _param3: 30
+  _param4: 7
 --- !u!1 &1099609128
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,15 +880,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300002, guid: 9a55daf14368fea4eafdf6d8b8bc0b91, type: 3}
+  _mesh: {fileID: 4300000, guid: c8a0d77098a27264489463e3f542cd61, type: 2}
   _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
-  _mode: 1
-  _speed: 0.2
-  _threshold: 0.5
-  _param1: 8
-  _param2: 0
-  _param3: 0
-  _param4: 0
+  _mode: 3
+  _speed: 0.05
+  _threshold: 0
+  _param1: 0.68
+  _param2: 2
+  _param3: 30
+  _param4: 7
 --- !u!1 &1230180478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1099,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 0}
     value: {fileID: 597312884}
+  - key: {fileID: 0}
+    value: {fileID: 1575654509}
   m_ExposedReferences:
     m_References:
     - ffdf88d45f7901a45a2a9af74191b185: {fileID: 0}
@@ -1496,23 +1498,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 0.8, z: -0.5}
-  _emitterSize: {x: 2.7, y: 2, z: 5}
-  _throttle: 0.03
-  _life: 3
+  _emitterSize: {x: 2.7, y: 2, z: 4}
+  _throttle: 0.08
+  _life: 2
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 0}
+  _initialVelocity: {x: 0, y: 0, z: -1}
   _directionSpread: 0
-  _speedRandomness: 0.5
-  _acceleration: {x: 0, y: 0, z: -1}
+  _speedRandomness: 0.8
+  _acceleration: {x: 0, y: 0, z: 0}
   _drag: 0.1
   _spin: 600
   _speedToSpin: 300
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.06
+  _noiseAmplitude: 0.03
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: 0aa75d5752865fb4e98bf506174ce586, type: 2}
-  _scale: 0.1
+  _scale: 0.08
   _scaleRandomness: 0.6
   _randomSeed: 2
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}

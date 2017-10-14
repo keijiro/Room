@@ -12,7 +12,7 @@ namespace Room
         [SerializeField] Mesh _mesh;
         [SerializeField] Material _material;
 
-        enum Mode { Default, Slice, Helix }
+        enum Mode { Default, Slice, Helix, Spike }
         [Space, SerializeField] Mode _mode;
 
         [Space]
