@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.8602941, g: 0.8602941, b: 0.8602941, a: 1}
-  m_AmbientEquatorColor: {r: 0.77205884, g: 0.77205884, b: 0.77205884, a: 1}
-  m_AmbientGroundColor: {r: 0.8588236, g: 0.8588236, b: 0.8588236, a: 1}
+  m_AmbientSkyColor: {r: 0.6911765, g: 0.6911765, b: 0.6911765, a: 1}
+  m_AmbientEquatorColor: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
+  m_AmbientGroundColor: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -159,9 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: fe7bc11c3d3814f449de912608c58d2f, type: 2}
-  _throttle: 0.15
+  _throttle: 0.4
   _lineWidth: 0.015
-  _lineWidthRandomness: 0.5
+  _lineWidthRandomness: 0
   _twist: 2
   _flow: {x: 0, y: 0, z: 0.3}
   _randomSeed: 117
@@ -256,6 +256,64 @@ Transform:
   m_Father: {fileID: 204667093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &146564214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 146564215}
+  - component: {fileID: 146564216}
+  m_Layer: 0
+  m_Name: Cloner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146564215
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146564214}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 758468521}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146564216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146564214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65b562676bfd1f4fb794bd0c10c2952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointSource: {fileID: 11400000, guid: f335009dd168058489b3ef89b642f531, type: 2}
+  _template: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _templateScale: 0.075
+  _displacementByNoise: 0.15
+  _rotationByNoise: 0.4
+  _scaleByNoise: 1.2
+  _scaleByPulse: 0
+  _noiseFrequency: 0.5
+  _noiseSpeed: {x: 0.25, y: 0.1}
+  _pulseProbability: 0
+  _pulseSpeed: 2
+  _material: {fileID: 2100000, guid: 5f6039b1a59e73c4c99d0e268ba0dcef, type: 2}
+  _gradient: {fileID: 11400000, guid: b206107866d50084e9cbfb8f4133d654, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 5}
+  _randomSeed: 0
+  _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &204667089
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,9 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bleeding: 0.25
-  _fringing: 0.5
-  _scanline: 0.13
+  _bleeding: 0.35
+  _fringing: 0.68
+  _scanline: 0
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!114 &204667097
 MonoBehaviour:
@@ -444,10 +502,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8e0d4b232a1475283137c73daf58a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color1: {r: 1, g: 0, b: 0, a: 1}
-  _color2: {r: 0, g: 0.66896534, b: 1, a: 1}
+  _color1: {r: 1, g: 0.35172412, b: 0, a: 1}
+  _color2: {r: 1, g: 0, b: 0.972414, a: 1}
   _angle: 90
-  _opacity: 0.05
+  _opacity: 0.1
   _blendMode: 2
   _debug: 0
   _shader: {fileID: 4800000, guid: 0eccb83e08c1a4981813863cbdebc044, type: 3}
@@ -464,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _threshold: 1.4
   _stretch: 0.75
-  _intensity: 0.2
+  _intensity: 0.3
   _tint: {r: 0.6838235, g: 0.6838235, b: 1, a: 1}
   _shader: {fileID: 4800000, guid: 10949a53e15fb4a4589953320ecc54b6, type: 3}
 --- !u!1 &238890061
@@ -519,7 +577,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: bce4af9de41e4bb429851fe641c9f328, type: 3}
   - {fileID: 2800000, guid: f8ce8501991f0c748af0b7be1be634b5, type: 3}
   _faceSelect: 0
-  _randomSeed: 91
+  _randomSeed: 197
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
   _shader: {fileID: 4800000, guid: d099cdae929b5994b88fabff0d5a47f8, type: 3}
 --- !u!1 &285074403
@@ -791,6 +849,7 @@ Transform:
   m_Children:
   - {fileID: 378232317}
   - {fileID: 1070543523}
+  - {fileID: 146564215}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -863,7 +922,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 816830856a94a9545851b48568aca1e2, type: 3}
   - {fileID: 2800000, guid: 05d525dbab0c1924bb45dc787f026462, type: 3}
   _faceSelect: 0
-  _randomSeed: 23
+  _randomSeed: 707
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
   _shader: {fileID: 4800000, guid: d099cdae929b5994b88fabff0d5a47f8, type: 3}
 --- !u!1 &1070543522
@@ -909,7 +968,7 @@ MonoBehaviour:
   _mesh: {fileID: 4300002, guid: f46ba4b73fd6c024483895b36378f76c, type: 3}
   _boxMaterial: {fileID: 2100000, guid: 28496193ec2596f4ab2918b478d3c7d1, type: 2}
   _coneMaterial: {fileID: 2100000, guid: e6b6f907bfe4cd040b5d14bf7d810bf1, type: 2}
-  _pillarMaterial: {fileID: 2100000, guid: 88b1d81e7cf54f749be2d7d619df819b, type: 2}
+  _pillarMaterial: {fileID: 0}
   _color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1080750638
 GameObject:
@@ -951,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300000, guid: 822811d2c5d04ae42b42ae49150cafe1, type: 3}
+  _mesh: {fileID: 4300000, guid: 6a51f710531be15489f4abe4085cd9a7, type: 3}
   _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
   _mode: 0
   _speed: -1
@@ -1000,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300004, guid: cb16f5e913ff9ae43bc6d95c5f7a614a, type: 3}
+  _mesh: {fileID: 4300002, guid: 9a55daf14368fea4eafdf6d8b8bc0b91, type: 3}
   _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
   _mode: 0
   _speed: -1
@@ -1284,7 +1343,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1287335874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.95, z: -0.4}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1558673036}
