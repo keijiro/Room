@@ -103,7 +103,7 @@ Shader "Room/Wall"
             uint seed = floor(fx.y * _Params.x) + 10000;
             float offs = lerp(0.2, 1, Random(seed)) * (100 + _LocalTime);
             float p = frac(fx.x * _Params.y + offs);
-            p = smoothstep(1, 1.05, 2 * abs(p - 0.5) + _Threshold);
+            p = smoothstep(1, 1.02, 2 * abs(p - 0.5) + _Threshold);
             o.Albedo = lerp(_Color1, _Color2, p);
 
         #elif defined(_MODE_RIPPLE)
