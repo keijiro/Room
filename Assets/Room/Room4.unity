@@ -21,7 +21,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.5706618, g: 0.9558824, b: 0.6288083, a: 1}
-  m_AmbientEquatorColor: {r: 0.67939013, g: 0.89705884, b: 0.7123703, a: 1}
+  m_AmbientEquatorColor: {r: 0.912846, g: 0.9852941, b: 0.923823, a: 1}
   m_AmbientGroundColor: {r: 0.53871375, g: 0.9568628, b: 0.60206974, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bleeding: 0.25
   _fringing: 0.5
-  _scanline: 0.161
+  _scanline: 0
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!114 &204667097
 MonoBehaviour:
@@ -417,7 +417,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: bce4af9de41e4bb429851fe641c9f328, type: 3}
   - {fileID: 2800000, guid: f8ce8501991f0c748af0b7be1be634b5, type: 3}
   _faceSelect: 0
-  _randomSeed: 91
+  _randomSeed: 157
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
   _shader: {fileID: 4800000, guid: d099cdae929b5994b88fabff0d5a47f8, type: 3}
 --- !u!1 &285074403
@@ -709,6 +709,109 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &847871002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 847871003}
+  - component: {fileID: 847871006}
+  - component: {fileID: 847871005}
+  - component: {fileID: 847871004}
+  m_Layer: 0
+  m_Name: Bubbles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847871003
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847871002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1575654510}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &847871004
+MeshFilter:
+  m_ObjectHideFlags: 8
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847871002}
+  m_Mesh: {fileID: 43862790431602782, guid: 831caac6dcd88c443a75b153beaa7ae0, type: 2}
+--- !u!114 &847871005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847871002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _emitterCenter: {x: 0, y: 0.6, z: -0.9}
+  _emitterSize: {x: 2.7, y: 2, z: 3.8}
+  _throttle: 0.12
+  _life: 3
+  _lifeRandomness: 0.6
+  _initialVelocity: {x: 0, y: 0.2, z: 0}
+  _directionSpread: 0
+  _speedRandomness: 1
+  _acceleration: {x: 0, y: 0, z: 0}
+  _drag: 0.1
+  _spin: 0
+  _speedToSpin: 0
+  _spinRandomness: 0
+  _noiseAmplitude: 0.04
+  _noiseFrequency: 0.8
+  _noiseMotion: 1
+  _template: {fileID: 11400000, guid: 831caac6dcd88c443a75b153beaa7ae0, type: 2}
+  _scale: 0.14
+  _scaleRandomness: 0.8
+  _randomSeed: 105
+  _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
+  _defaultMaterial: {fileID: 2100000, guid: 0139c04a93166b843be379e0cc915782, type: 2}
+--- !u!23 &847871006
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847871002}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: c28b39ff02bf1c141a83c4626b62ec92, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1025930103
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +864,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 816830856a94a9545851b48568aca1e2, type: 3}
   - {fileID: 2800000, guid: 05d525dbab0c1924bb45dc787f026462, type: 3}
   _faceSelect: 0
-  _randomSeed: 23
+  _randomSeed: 252
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
   _shader: {fileID: 4800000, guid: d099cdae929b5994b88fabff0d5a47f8, type: 3}
 --- !u!1 &1070543522
@@ -849,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300000, guid: 822811d2c5d04ae42b42ae49150cafe1, type: 3}
+  _mesh: {fileID: 4300000, guid: 6a51f710531be15489f4abe4085cd9a7, type: 3}
   _material: {fileID: 2100000, guid: 310767edbe8ccc141a23bb1e5955277a, type: 2}
   _mode: 1
   _speed: 0.1
@@ -898,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34b449bd9927874f83786c83d717dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4300004, guid: cb16f5e913ff9ae43bc6d95c5f7a614a, type: 3}
+  _mesh: {fileID: 4300002, guid: 9a55daf14368fea4eafdf6d8b8bc0b91, type: 3}
   _material: {fileID: 2100000, guid: 94a3132f0fe75b946b358aface3f4779, type: 2}
   _mode: 1
   _speed: 0.1
@@ -1233,6 +1336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2043468747}
+  - {fileID: 847871003}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1445,13 +1549,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 1, z: -2.2}
   _emitterSize: {x: 2.7, y: 2, z: 6}
-  _throttle: 0.08
+  _throttle: 0.05
   _life: 3
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}
   _directionSpread: 0
   _speedRandomness: 0.5
-  _acceleration: {x: 0, y: -0.2, z: 0}
+  _acceleration: {x: 0, y: 0, z: 0}
   _drag: 0.1
   _spin: 600
   _speedToSpin: 300
@@ -1460,7 +1564,7 @@ MonoBehaviour:
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: e6fbfc0f19f34de49a3742b3d986cbb0, type: 2}
-  _scale: 0.4
+  _scale: 0.2
   _scaleRandomness: 0.6
   _randomSeed: 2
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
