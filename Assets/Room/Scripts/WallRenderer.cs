@@ -18,7 +18,7 @@ namespace Room
         [SerializeField] Color _ceilingColor = Color.white;
         [SerializeField] Color _secondaryColor = Color.white;
 
-        enum Mode { Default, Wave, Stripe, Scroll, Ripple, Light }
+        enum Mode { Default, Wave, Stripe, Scroll, Ripple, Light, Dot }
         [Space, SerializeField] Mode _mode;
         [SerializeField] Transform _effectOrigin;
 

@@ -25,7 +25,7 @@ Shader "Room/Wall"
         CGPROGRAM
 
         #pragma surface Surface Standard addshadow nolightmap nolppv
-        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL _MODE_RIPPLE _MODE_LIGHT
+        #pragma multi_compile _MODE_DEFAULT _MODE_WAVE _MODE_STRIPE _MODE_SCROLL _MODE_RIPPLE _MODE_LIGHT _MODE_DOT
         #pragma target 3.0
 
         #include "Common.cginc"
@@ -119,6 +119,13 @@ Shader "Room/Wall"
             o.Albedo = _Color1;
             o.Emission = _Params.x * Light(fx.x     , _Params.z) +
                          _Params.y * Light(fx.x + 20, _Params.w) * _Color2;
+
+        #elif defined(_MODE_DOT)
+
+            float2 p = fx.xy * _Params.x + 1000;
+            float r = (sin(dot(p * _Params.y, 1) + _LocalTime) + 1) / 4;
+            float l = length(p - floor(p + 0.5));
+            o.Albedo = lerp(_Color1, _Color2, l < r * _Params.z);
 
         #else // _MODE_DEFAULT
 
