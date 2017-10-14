@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.6911765, g: 0.6911765, b: 0.6911765, a: 1}
-  m_AmbientEquatorColor: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
-  m_AmbientGroundColor: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
+  m_AmbientSkyColor: {r: 0.58823526, g: 0.58823526, b: 0.58823526, a: 1}
+  m_AmbientEquatorColor: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
+  m_AmbientGroundColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -1797,25 +1797,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 1, z: -2.2}
+  _emitterCenter: {x: 0, y: 1.2, z: -2.2}
   _emitterSize: {x: 2.7, y: 2, z: 6}
-  _throttle: 0.12
+  _throttle: 0.3
   _life: 3
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 0}
+  _initialVelocity: {x: 0, y: -0.1, z: 0}
   _directionSpread: 0
-  _speedRandomness: 0.5
-  _acceleration: {x: 0, y: -0.2, z: 0}
+  _speedRandomness: 1
+  _acceleration: {x: 0, y: -0.1, z: 0}
   _drag: 0.1
   _spin: 600
   _speedToSpin: 300
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.06
+  _noiseAmplitude: 0.04
   _noiseFrequency: 0.8
   _noiseMotion: 1
   _template: {fileID: 11400000, guid: 0aa75d5752865fb4e98bf506174ce586, type: 2}
-  _scale: 0.15
-  _scaleRandomness: 0.6
+  _scale: 0.1
+  _scaleRandomness: 0.7
   _randomSeed: 2
   _kernels: {fileID: 4800000, guid: ec7be90622201624cb51488b5eebbdc8, type: 3}
   _defaultMaterial: {fileID: 2100000, guid: 0139c04a93166b843be379e0cc915782, type: 2}
