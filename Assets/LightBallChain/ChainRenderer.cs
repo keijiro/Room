@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Timeline;
 
 namespace LightBallChain
@@ -344,12 +345,15 @@ namespace LightBallChain
             _ballMaterial.SetFloat("_Scale", _ballScale);
 
             // Draw balls with an instanced indirect draw call.
-            Graphics.DrawMeshInstancedIndirect(_ballMesh, 0, _ballMaterial, _bounds, _drawArgsBuffer);
+            Graphics.DrawMeshInstancedIndirect(
+                _ballMesh, 0, _ballMaterial, _bounds, _drawArgsBuffer,
+                0, null, ShadowCastingMode.Off, true, gameObject.layer
+            );
         }
 
         void OnRenderObject()
         {
-            if ((Camera.current.cullingMask & 1) == 0) return;
+            if ((Camera.current.cullingMask & (1 << gameObject.layer)) == 0) return;
 
             // FIXME: Actually should I do this???
             if (Camera.current.name == "Preview Scene Camera") return;

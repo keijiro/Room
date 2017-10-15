@@ -20,6 +20,12 @@ Desktop.ini
 /Extras/obj
 /Extras/raw
 
+/HoudiniTemp
+/Assets/Houdini
+/Assets/Houdini.meta
+/Assets/HoudiniApi
+/Assets/HoudiniApi.meta
+
 /Assets/StreamingAssets/FFmpegOut
 /Assets/StreamingAssets/FFmpegOut.meta
 
