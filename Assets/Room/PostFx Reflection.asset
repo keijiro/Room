@@ -30,19 +30,19 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 1
-    value: 4
+    value: 7
   maximumIterationCount:
-    overrideState: 0
-    value: 16
+    overrideState: 1
+    value: 20
   resolution:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   thickness:
-    overrideState: 0
-    value: 8
+    overrideState: 1
+    value: 22
   maximumMarchDistance:
     overrideState: 1
-    value: 7
+    value: 6
   distanceFade:
     overrideState: 0
     value: 0.526
