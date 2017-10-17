@@ -414,8 +414,8 @@ MonoBehaviour:
   _accent: 0.51627094
   _accentToScale: 0.5
   _faceTextures:
-  - {fileID: 2800000, guid: bce4af9de41e4bb429851fe641c9f328, type: 3}
-  - {fileID: 2800000, guid: f8ce8501991f0c748af0b7be1be634b5, type: 3}
+  - {fileID: 2800000, guid: d9df0a73a8f383a4fb5b00e300401c8b, type: 3}
+  - {fileID: 2800000, guid: 388563235f29ff64bafef266ca2863e4, type: 3}
   _faceSelect: 0
   _randomSeed: 591
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
@@ -758,8 +758,8 @@ MonoBehaviour:
   _accent: 0.51627094
   _accentToScale: 0.5
   _faceTextures:
-  - {fileID: 2800000, guid: 816830856a94a9545851b48568aca1e2, type: 3}
-  - {fileID: 2800000, guid: 05d525dbab0c1924bb45dc787f026462, type: 3}
+  - {fileID: 2800000, guid: a19a7ae6d0596de489349ad2c8149f19, type: 3}
+  - {fileID: 2800000, guid: 2b38c4a84481f8a4e93e9a05471151f6, type: 3}
   _faceSelect: 0
   _randomSeed: 398
   _mesh: {fileID: 4300000, guid: 4958daf3745e86244a252d5306a53b80, type: 3}
